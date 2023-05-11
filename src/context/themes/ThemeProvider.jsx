@@ -33,7 +33,7 @@ const ThemeProvider = ({ children }) => {
    const [theme, setTheme] = useState(themes.default)
 
    const selectTheme = (leagueName) => {
-      setTheme(themes.leagueName)
+      setTheme(themes[leagueName])
    }
 
    return (

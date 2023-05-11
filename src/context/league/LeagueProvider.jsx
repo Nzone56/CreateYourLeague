@@ -1,4 +1,7 @@
-import { PremierLeagueTeams } from '../../helpers/data/PremierLeague22Template'
+import {
+   PremierLeagueTeams,
+   seasonDataTemplate,
+} from '../../helpers/data/PremierLeague22Template'
 import { createContext, useState } from 'react'
 
 const LeagueContext = createContext()
@@ -12,10 +15,21 @@ const leagues = {
 }
 
 const LeagueProvider = ({ children }) => {
-   const [league, setLeague] = useState(leagues.PremierLeague)
+   const [league, setLeague] = useState({})
 
-   const selectLeague = (leagueName) => {
-      setLeague(leagues.leagueName)
+   const startSeason = (selectedLeague) => {
+      setLeague(() => {
+         const updatedClubs = selectedLeague.clubs.map((club) => ({
+            ...club,
+            seasonData: { ...seasonDataTemplate },
+         }))
+
+         return { ...league, clubs: updatedClubs }
+      })
+   }
+
+   const selectLeague = (selectedLeague) => {
+      startSeason(leagues[selectedLeague]) //When we change the league, a new season starts.
    }
    return (
       <LeagueContext.Provider value={{ league, selectLeague }}>

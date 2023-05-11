@@ -1,20 +1,18 @@
 import './styles/index.css'
 import { Footer } from './components/footer'
 import { Header } from './components/Header'
-import { Standings } from './components/Standings'
+import { LeagueTable } from './components/leagueTable'
 import { LeagueProvider } from './context/league/LeagueProvider'
 import { ThemeProvider } from './context/themes/ThemeProvider'
 
-export const App = () => {
+export const LeagueApp = () => {
    return (
       <ThemeProvider>
          <LeagueProvider>
             <Header />
-            <Standings />
+            <LeagueTable />
             <Footer />
          </LeagueProvider>
       </ThemeProvider>
    )
 }
-
-export default App
