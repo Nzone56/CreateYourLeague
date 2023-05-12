@@ -2,17 +2,14 @@ import { useContext, useEffect, useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { Standings } from './Standings'
+
 export const LeagueTable = () => {
-   const { league, selectLeague } = useContext(LeagueContext)
+   const { league } = useContext(LeagueContext)
    const [teams, setTeams] = useState(league.clubs)
 
    useEffect(() => {
       setTeams(league.clubs)
    }, [league])
-
-   const handleSelectLeague = () => {
-      selectLeague('PremierLeague')
-   }
 
    return (
       <Box
@@ -26,11 +23,7 @@ export const LeagueTable = () => {
          }}
       >
          <Typography> -- LEAGUE TABLE -- </Typography>
-         {teams ? (
-            <Standings teams={teams} />
-         ) : (
-            <button onClick={handleSelectLeague}> PREMIER LEAGUE </button>
-         )}
+         <Standings teams={teams} />
       </Box>
    )
 }

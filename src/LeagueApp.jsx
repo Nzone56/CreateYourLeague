@@ -5,10 +5,10 @@ import { AppRouter } from './router/AppRouter'
 
 export const LeagueApp = () => {
    return (
-      <ThemeProvider>
-         <LeagueProvider>
-            <AppRouter />
-         </LeagueProvider>
-      </ThemeProvider>
+      // <ThemeProvider>
+      <LeagueProvider>
+         <AppRouter />
+      </LeagueProvider>
+      // </ThemeProvider>
    )
 }

@@ -32,8 +32,8 @@ const LeagueProvider = ({ children }) => {
       })
    }
 
-   const selectLeague = (selectedLeague) => {
-      startSeason(leagues[selectedLeague]) //When we change the league, a new season starts.
+   const selectLeague = (leagueName) => {
+      startSeason(leagues[leagueName]) //When we change the league, a new season starts.
    }
    return (
       <LeagueContext.Provider value={{ league, selectLeague, leagues }}>
