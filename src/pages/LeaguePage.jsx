@@ -1,5 +1,10 @@
-import React from 'react'
+import { Header } from '../components/header'
 
 export const LeaguePage = () => {
-   return <div>LeaguePage</div>
+   return (
+      <>
+         <Header />
+         <div>League</div>
+      </>
+   )
 }

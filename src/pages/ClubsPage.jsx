@@ -1,3 +1,10 @@
+import { Header } from '../components/header'
+
 export const ClubsPage = () => {
-   return <div>ClubsPage</div>
+   return (
+      <>
+         <Header />
+         <div>Clubs</div>
+      </>
+   )
 }

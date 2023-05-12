@@ -2,7 +2,7 @@ export const LaLigaData = {
    id: 2,
    name: 'LaLiga',
    logo_url: 'LaLigaLogo.svg',
-   cardBcg_url: 'LaLigaCardBg.jpg',
+   cardBg_url: 'LaLigaCardBg.jpg',
    competition: 'LaLiga Santander',
    location: 'Spain',
    season: '2022-23',
@@ -13,7 +13,7 @@ export const LaLigaData = {
    number_of_participating_clubs: 20,
    theme: {
       primary: '#254150', //grey
-      secundary: '#92DAEC', //light-blue
+      secondary: '#92DAEC', //light-blue
       tertiary: '#25282A', //black
       Other1: '#ffffff', //white
       Other2: '#E32D38', //red

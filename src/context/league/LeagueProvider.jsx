@@ -28,7 +28,7 @@ const LeagueProvider = ({ children }) => {
             seasonData: { ...ClubStatsTemplate },
          }))
 
-         return { ...league, clubs: updatedClubs }
+         return { ...selectedLeague, clubs: updatedClubs }
       })
    }
 

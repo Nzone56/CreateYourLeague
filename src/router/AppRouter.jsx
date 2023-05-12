@@ -20,11 +20,12 @@ export const AppRouter = () => {
 
    return (
       <Routes>
-         <Route path="/season" element={<HomePage />} />
+         <Route path="/season/home" element={<HomePage />} />
          <Route path="/season/standings" element={<StandingsPage />} />
          <Route path="/season/schedule" element={<SchedulePage />} />
          <Route path="/season/league" element={<LeaguePage />} />
          <Route path="/season/clubs" element={<ClubsPage />} />
+         <Route path="/welcome" element={<LandingPage />} />
       </Routes>
    )
 }

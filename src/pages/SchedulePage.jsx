@@ -1,3 +1,10 @@
+import { Header } from '../components/header'
+
 export const SchedulePage = () => {
-   return <div>Schedule</div>
+   return (
+      <>
+         <Header />
+         <div>Schedule</div>
+      </>
+   )
 }

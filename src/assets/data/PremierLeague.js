@@ -2,7 +2,7 @@ export const PremierLeagueData = {
    id: 1,
    name: 'PremierLeague',
    logo_url: 'PremierLeagueLogo.svg',
-   cardBcg_url: 'PremierLeagueCardBg.jpg',
+   cardBg_url: 'PremierLeagueCardBg.jpg',
    competition: 'English Premier League',
    location: 'United Kingdom',
    season: '2022-23',
@@ -13,10 +13,10 @@ export const PremierLeagueData = {
    number_of_participating_clubs: 20,
    theme: {
       primary: '#04f5ff', // blue
-      secundary: '#38003c', //purple
+      secondary: '#38003c', //purple
       tertiary: '#e90052', // red/rose
-      Other1: '#ffffff', //white
-      Other2: '#00ff85', //green
+      Other2: '#ffffff', //white
+      Other1: '#00ff85', //green
    },
    clubs: [
       {

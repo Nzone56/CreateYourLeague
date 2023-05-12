@@ -2,7 +2,7 @@ export const BundesligaData = {
    id: 4,
    name: 'Bundesliga',
    logo_url: 'BundesligaLogo.svg',
-   cardBcg_url: 'BundesligaCardBg.jpg',
+   cardBg_url: 'BundesligaCardBg.jpg',
    competition: '1. Bundesliga ',
    location: 'Germany',
    season: '2022-23',
@@ -12,11 +12,11 @@ export const BundesligaData = {
    total_matches: 306,
    number_of_participating_clubs: 18,
    theme: {
-      primary: '#000E14', //grey
-      secundary: '#00080b', //black
-      Other2: '#d3010C', //red
-      Other1: '#ffffff', //white
-      tertiary: '#B12829', //grey
+      secondary: '#000E14', //grey
+      Other1: '#00080b', //black
+      tertiary: '#d3010C', //red
+      Other2: '#ffffff', //white
+      primary: '#34383c', //grey
    },
    clubs: [],
 }

@@ -12,7 +12,6 @@ const createData = (id, position, name, PJ, W, D, L, GF, GA, GD, PTS) => {
 }
 
 export const Standings = ({ teams }) => {
-   teams.map((team) => console.log(team.seasonData.games_played))
    const rows = createRows(teams)
 
    return (

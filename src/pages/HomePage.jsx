@@ -1,3 +1,10 @@
+import { Header } from '../components/header'
+
 export const HomePage = () => {
-   return <div>Home</div>
+   return (
+      <>
+         <Header />
+         <div>Home</div>
+      </>
+   )
 }
