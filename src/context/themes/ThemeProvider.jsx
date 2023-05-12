@@ -8,8 +8,11 @@ export const themes = {
       background: '#222222',
    },
    PremierLeague: {
-      foreground: '#000000',
-      background: '#eeeeee',
+      foreground: '#04f5ff',
+      background: '#e90052',
+      footerheader: '#38003c',
+      Other1: '#ffffff',
+      Other2: '#00ff85',
    },
    LaLiga: {
       foreground: '#ffffff',

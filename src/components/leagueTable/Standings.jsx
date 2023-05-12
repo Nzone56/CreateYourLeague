@@ -1,5 +1,4 @@
 import {
-   Paper,
    Table,
    TableBody,
    TableCell,
@@ -17,11 +16,19 @@ export const Standings = ({ teams }) => {
    const rows = createRows(teams)
 
    return (
-      <TableContainer component={Paper}>
-         <Table size={'small'} sx={{ maxWidth: 650 }} aria-label="simple table">
+      <TableContainer
+         sx={{ width: '70%', display: 'flex', justifyContent: 'center' }}
+      >
+         <Table
+            size={'small'}
+            // sx={{ maxWidth: 650 }}
+            aria-label="Standings Table"
+            stickyHeader={true}
+            padding={'checkbox'}
+         >
             <TableHead>
                <TableRow>
-                  <TableCell> Pos </TableCell>
+                  <TableCell> # </TableCell>
                   <TableCell> Club </TableCell>
                   <TableCell align="right">PJ</TableCell>
                   <TableCell align="right">W</TableCell>
@@ -35,13 +42,8 @@ export const Standings = ({ teams }) => {
             </TableHead>
             <TableBody>
                {rows.map((row) => (
-                  <TableRow
-                     key={row.id}
-                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                     <TableCell component="th" scope="row">
-                        {row.position}
-                     </TableCell>
+                  <TableRow key={row.position}>
+                     <TableCell>{row.position}</TableCell>
                      <TableCell align="left">{row.name}</TableCell>
                      <TableCell align="right">{row.PJ}</TableCell>
                      <TableCell align="right">{row.W}</TableCell>
@@ -64,7 +66,7 @@ function createRows(teams) {
       return createData(
          team.id,
          team.position,
-         team.name,
+         team.short_name,
          team.seasonData.games_played,
          team.seasonData.wins,
          team.seasonData.draws,

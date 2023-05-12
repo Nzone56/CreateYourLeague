@@ -1,4 +1,6 @@
-export const PremierLeagueTeams = {
+export const PremierLeagueData = {
+   id: 1,
+   name: 'PremierLeague',
    competition: 'English Premier League',
    location: 'United Kingdom',
    season: '2022-23',
@@ -137,7 +139,7 @@ export const PremierLeagueTeams = {
          stadium: 'Etihad Stadium',
          capacity: 55017,
          manager: 'Josep Guardiola',
-         position: 4,
+         position: 13,
       },
       {
          id: 14,
@@ -164,7 +166,7 @@ export const PremierLeagueTeams = {
       {
          id: 16,
          name: 'Nottingham Forest',
-         short_name: 'Not Forest',
+         short_name: 'Nottingham F',
          club_code: 'NOF',
          stadium: 'City Ground',
          capacity: 30445,
@@ -212,31 +214,4 @@ export const PremierLeagueTeams = {
          position: 20,
       },
    ],
-}
-
-export const seasonDataTemplate = {
-   games_played: 0,
-   home_games_played: 0,
-   away_games_played: 0,
-   wins: 0,
-   home_wins: 0,
-   away_wins: 0,
-   draws: 0,
-   home_draws: 0,
-   away_draws: 0,
-   losses: 0,
-   home_losses: 0,
-   away_losses: 0,
-   goals_scored: 0,
-   home_goals_scored: 0,
-   away_goals_scored: 0,
-   goals_conceded: 0,
-   home_goals_conceded: 0,
-   away_goals_conceded: 0,
-   goals_difference: 0,
-   points: 0,
-   home_points: 0,
-   away_points: 0,
-   next_fixture: '-(H/A)',
-   form: ['-', '-', '-', '-', '-'],
 }

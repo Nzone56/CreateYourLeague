@@ -1,5 +1,9 @@
-import { Typography } from '@mui/material'
+import { ThemeContext } from '@emotion/react'
+import { AppBar, Typography } from '@mui/material'
+import { useContext } from 'react'
 
 export const Header = () => {
-   return <Typography>Hi! I'm a Header</Typography>
+   const { theme, setTheme } = useContext(ThemeContext)
+   console.log(theme)
+   return <AppBar position="sticky"> Holaaaaaaa </AppBar>
 }
