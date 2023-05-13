@@ -15,8 +15,8 @@ export const SerieAData = {
       primary: '#171D8D', //purple-blue
       secondary: '#005BFF', //blue
       tertiary: '#00E8DA', //light-green
-      Other1: '#ffffff', //white
-      Other2: '#1D125D', //purple
+      Other2: '#ffffff', //white
+      Other1: '#1D125D', //purple
    },
    clubs: [],
 }

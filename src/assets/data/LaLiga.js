@@ -15,8 +15,8 @@ export const LaLigaData = {
       primary: '#254150', //grey
       secondary: '#92DAEC', //light-blue
       tertiary: '#25282A', //black
-      Other1: '#ffffff', //white
-      Other2: '#E32D38', //red
+      Other2: '#ffffff', //white
+      Other1: '#E32D38', //red
    },
    clubs: [],
 }

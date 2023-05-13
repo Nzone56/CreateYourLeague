@@ -7,8 +7,22 @@ import {
    TableRow,
 } from '@mui/material'
 
-const createData = (id, position, name, PJ, W, D, L, GF, GA, GD, PTS) => {
-   return { id, position, name, PJ, W, D, L, GF, GA, GD, PTS }
+const createData = (
+   id,
+   position,
+   name,
+   PJ,
+   W,
+   D,
+   L,
+   GF,
+   GA,
+   GD,
+   PTS,
+   form,
+   next
+) => {
+   return { id, position, name, PJ, W, D, L, GF, GA, GD, PTS, form, next }
 }
 
 export const Standings = ({ teams }) => {
@@ -27,16 +41,18 @@ export const Standings = ({ teams }) => {
          >
             <TableHead>
                <TableRow>
-                  <TableCell> # </TableCell>
+                  <TableCell> Position </TableCell>
                   <TableCell> Club </TableCell>
-                  <TableCell align="right">PJ</TableCell>
-                  <TableCell align="right">W</TableCell>
-                  <TableCell align="right">D</TableCell>
-                  <TableCell align="right">L</TableCell>
+                  <TableCell align="right">Played</TableCell>
+                  <TableCell align="right">Won</TableCell>
+                  <TableCell align="right">Drawn</TableCell>
+                  <TableCell align="right">Lost</TableCell>
                   <TableCell align="right">GF</TableCell>
                   <TableCell align="right">GA</TableCell>
                   <TableCell align="right">GD</TableCell>
-                  <TableCell align="right">PTS</TableCell>
+                  <TableCell align="right">Points</TableCell>
+                  <TableCell align="right">Form</TableCell>
+                  <TableCell align="right">Next</TableCell>
                </TableRow>
             </TableHead>
             <TableBody>
@@ -52,6 +68,8 @@ export const Standings = ({ teams }) => {
                      <TableCell align="right">{row.GA}</TableCell>
                      <TableCell align="right">{row.GD}</TableCell>
                      <TableCell align="right">{row.PTS}</TableCell>
+                     <TableCell align="right">{row.form}</TableCell>
+                     <TableCell align="right">{row.next}</TableCell>
                   </TableRow>
                ))}
             </TableBody>
@@ -73,7 +91,9 @@ function createRows(teams) {
          team.seasonData.goals_scored,
          team.seasonData.goals_conceded,
          team.seasonData.goals_difference,
-         team.seasonData.points
+         team.seasonData.points,
+         team.seasonData.form,
+         team.seasonData.next_fixture
       )
    })
 

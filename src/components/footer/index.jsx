@@ -1,5 +1,23 @@
-import { Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
+import { LeagueContext } from '../../context/league/LeagueProvider'
+import { useContext } from 'react'
 
 export const Footer = () => {
-   return <Typography>Hi! Im a Footer</Typography>
+   const { league } = useContext(LeagueContext)
+
+   return (
+      <Box
+         sx={{
+            backgroundColor: league.theme.secondary,
+            color: league.theme.tertiary,
+            padding: '20px',
+            textAlign: 'center',
+            marginTop: 'auto',
+            maxWidth: '100vw',
+            overflowX: 'hidden',
+         }}
+      >
+         <Typography> {league.competition}</Typography>
+      </Box>
+   )
 }

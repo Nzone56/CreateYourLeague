@@ -15,8 +15,8 @@ export const Ligue1Data = {
       primary: '#091c3e', //blue
       secondary: '#cdfb0a', //yellow
       tertiary: '#050f21', //darker-blue
-      Other1: '#ffffff', //white
-      Other2: '#050f21', //green
+      Other2: '#ffffff', //white
+      Other1: '#050f21', //green
    },
    clubs: [],
 }

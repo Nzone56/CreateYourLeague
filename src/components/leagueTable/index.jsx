@@ -15,14 +15,22 @@ export const LeagueTable = () => {
       <Box
          m={20}
          sx={{
-            backgroundColor: '#37003c',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
+            maxWidth: '100vw',
          }}
       >
-         <Typography> -- LEAGUE TABLE -- </Typography>
+         <Typography
+            p={2}
+            sx={{
+               backgroundColor: league.theme.secondary,
+               color: league.theme.Other2,
+            }}
+         >
+            -- LEAGUE TABLE --
+         </Typography>
          <Standings teams={teams} />
       </Box>
    )

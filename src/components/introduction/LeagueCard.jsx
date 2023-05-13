@@ -63,7 +63,7 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                            width: '100%',
                            objectFit: 'contain',
                         }}
-                        image={`../src/assets/images/${league.logo_url}`}
+                        image={`../src/assets/images/leagues/${league.logo_url}`}
                         title="Logo"
                      />
                   ) : (
@@ -74,7 +74,7 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                            alignItems: 'center',
                            justifyContent: 'center',
                            flexDirection: 'row',
-                           backgroundImage: `../src/assets/images/${league.cardBg_url}`,
+                           backgroundImage: `../src/assets/images/leagues/${league.cardBg_url}`,
                            backgroundSize: 'cover',
                            backgroundPosition: 'center',
                         }}
@@ -86,7 +86,7 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                               width: isHovered ? '25%' : '100%',
                               objectFit: 'contain',
                            }}
-                           image={`../src/assets/images/${league.logo_url}`}
+                           image={`../src/assets/images/leagues/${league.logo_url}`}
                            title="Logo"
                         />
                         <CardContent>
