@@ -21,6 +21,6 @@ export const ClubStatsTemplate = {
    points: 0,
    home_points: 0,
    away_points: 0,
-   next_fixture: '-(H/A)',
+   next_fixture: '(H/A)',
    form: ['-', '-', '-', '-', '-'],
 }

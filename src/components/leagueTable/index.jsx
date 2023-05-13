@@ -13,10 +13,10 @@ export const LeagueTable = () => {
 
    return (
       <Box
-         m={20}
+         mt={10}
+         mb={10}
          sx={{
             display: 'flex',
-            justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
             maxWidth: '100vw',

@@ -1,75 +1,134 @@
 import {
+   CardMedia,
    Table,
    TableBody,
    TableCell,
    TableContainer,
    TableHead,
    TableRow,
+   tableCellClasses,
 } from '@mui/material'
-
+import { LeagueContext } from '../../context/league/LeagueProvider'
+import { useContext } from 'react'
+import styled from '@emotion/styled'
+import ArsenalLogo from '../../assets/images/PremierLeague/ArsenalLogo.svg'
 const createData = (
    id,
-   position,
-   name,
-   PJ,
-   W,
-   D,
-   L,
+   Position,
+   Club,
+   Played,
+   Won,
+   Draw,
+   Lost,
    GF,
    GA,
    GD,
-   PTS,
-   form,
-   next
+   Points,
+   Form,
+   Next
 ) => {
-   return { id, position, name, PJ, W, D, L, GF, GA, GD, PTS, form, next }
+   return {
+      id,
+      Position,
+      Club,
+      Played,
+      Won,
+      Draw,
+      Lost,
+      GF,
+      GA,
+      GD,
+      Points,
+      Form,
+      Next,
+   }
 }
 
-export const Standings = ({ teams }) => {
-   const rows = createRows(teams)
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+   [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.secondary,
+      color: theme.Other2,
+   },
+   [`&.${tableCellClasses.body}`]: {
+      fontSize: 25,
+      color: theme.secondary,
+      padding: 5,
+   },
+}))
 
+const headers = [
+   'Position',
+   'Club',
+   'Played',
+   'Won',
+   'Draw',
+   'Lost',
+   'GF',
+   'GA',
+   'GD',
+   'Points',
+   'Form',
+   'Next',
+]
+export const Standings = ({ teams }) => {
+   const { league } = useContext(LeagueContext)
+   const rows = createRows(teams) // Teams should be ordered by position
+   const logo_url = league.clubs[0].logo_url
    return (
       <TableContainer
-         sx={{ width: '70%', display: 'flex', justifyContent: 'center' }}
+         sx={{ width: '85%', display: 'flex', justifyContent: 'center' }}
       >
+         {/* <img
+            src={`../src/assets/images/PremierLeague/${logo_url}`}
+            alt="Club Logo"
+            style={{ marginRight: '5px' }}
+         /> */}
          <Table
-            size={'small'}
-            // sx={{ maxWidth: 650 }}
+            sx={{ maxWidth: 1250 }}
             aria-label="Standings Table"
             stickyHeader={true}
-            padding={'checkbox'}
          >
             <TableHead>
                <TableRow>
-                  <TableCell> Position </TableCell>
-                  <TableCell> Club </TableCell>
-                  <TableCell align="right">Played</TableCell>
-                  <TableCell align="right">Won</TableCell>
-                  <TableCell align="right">Drawn</TableCell>
-                  <TableCell align="right">Lost</TableCell>
-                  <TableCell align="right">GF</TableCell>
-                  <TableCell align="right">GA</TableCell>
-                  <TableCell align="right">GD</TableCell>
-                  <TableCell align="right">Points</TableCell>
-                  <TableCell align="right">Form</TableCell>
-                  <TableCell align="right">Next</TableCell>
+                  {headers.map((header) => (
+                     <StyledTableCell
+                        key={header}
+                        theme={league.theme}
+                        align={header === 'Club' ? 'left' : 'center'}
+                     >
+                        {header}
+                     </StyledTableCell>
+                  ))}
                </TableRow>
             </TableHead>
             <TableBody>
                {rows.map((row) => (
                   <TableRow key={row.position}>
-                     <TableCell>{row.position}</TableCell>
-                     <TableCell align="left">{row.name}</TableCell>
-                     <TableCell align="right">{row.PJ}</TableCell>
-                     <TableCell align="right">{row.W}</TableCell>
-                     <TableCell align="right">{row.D}</TableCell>
-                     <TableCell align="right">{row.L}</TableCell>
-                     <TableCell align="right">{row.GF}</TableCell>
-                     <TableCell align="right">{row.GA}</TableCell>
-                     <TableCell align="right">{row.GD}</TableCell>
-                     <TableCell align="right">{row.PTS}</TableCell>
-                     <TableCell align="right">{row.form}</TableCell>
-                     <TableCell align="right">{row.next}</TableCell>
+                     {headers.map((header) => (
+                        <StyledTableCell
+                           key={`${row.position}-${header}`}
+                           theme={league.theme}
+                           align={header === 'Club' ? 'left' : 'center'}
+                        >
+                           {header === 'Club' ? (
+                              <>
+                                 <img
+                                    // src={`../../assets/images/PremierLeague/${row.logo_url}`}
+                                    src={ArsenalLogo}
+                                    alt="Club Logo"
+                                    width="30"
+                                    height="30"
+                                    style={{
+                                       marginRight: '5px',
+                                    }}
+                                 />
+                                 {row[header]}
+                              </>
+                           ) : (
+                              row[header]
+                           )}
+                        </StyledTableCell>
+                     ))}
                   </TableRow>
                ))}
             </TableBody>
@@ -83,7 +142,7 @@ function createRows(teams) {
       return createData(
          team.id,
          team.position,
-         team.short_name,
+         team.name,
          team.seasonData.games_played,
          team.seasonData.wins,
          team.seasonData.draws,

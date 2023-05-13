@@ -8,8 +8,7 @@ export const StandingsPage = () => {
          style={{
             display: 'flex',
             flexDirection: 'column',
-            minHeight: '100vh',
-            width: '100vw',
+            height: '100vh',
          }}
       >
          <Header />

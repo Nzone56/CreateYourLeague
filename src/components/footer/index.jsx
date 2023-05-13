@@ -14,7 +14,6 @@ export const Footer = () => {
             textAlign: 'center',
             marginTop: 'auto',
             maxWidth: '100vw',
-            overflowX: 'hidden',
          }}
       >
          <Typography> {league.competition}</Typography>
