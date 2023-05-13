@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import { LeagueContext } from '../../context/league/LeagueProvider'
-import { Standings } from './Standings'
+import { StandingsTable } from './StandingsTable'
 
 export const LeagueTable = () => {
    const { league } = useContext(LeagueContext)
@@ -31,7 +31,7 @@ export const LeagueTable = () => {
          >
             -- LEAGUE TABLE --
          </Typography>
-         <Standings teams={teams} />
+         <StandingsTable teams={teams} />
       </Box>
    )
 }

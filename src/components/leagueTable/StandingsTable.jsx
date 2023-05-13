@@ -1,90 +1,26 @@
 import {
    Box,
-   CardMedia,
    Table,
    TableBody,
-   TableCell,
    TableContainer,
    TableHead,
    TableRow,
-   tableCellClasses,
 } from '@mui/material'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { useContext } from 'react'
-import styled from '@emotion/styled'
+import {
+   StyledTableRow,
+   StyledTableCell,
+} from '../../helpers/hooks/standings/StyledTable'
+import { headers, createRows } from '../../helpers/hooks/standings/DataToTable'
 
-const createData = (
-   id,
-   logo,
-   Position,
-   Club,
-   Played,
-   Won,
-   Draw,
-   Lost,
-   GF,
-   GA,
-   GD,
-   Points,
-   Form,
-   Next
-) => {
-   return {
-      id,
-      logo,
-      Position,
-      Club,
-      Played,
-      Won,
-      Draw,
-      Lost,
-      GF,
-      GA,
-      GD,
-      Points,
-      Form,
-      Next,
-   }
-}
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-   [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.secondary,
-      color: theme.Other2,
-   },
-   [`&.${tableCellClasses.body}`]: {
-      fontSize: 25,
-      color: theme.secondary,
-      padding: 5,
-   },
-}))
-
-const headers = [
-   'Position',
-   'Club',
-   'Played',
-   'Won',
-   'Draw',
-   'Lost',
-   'GF',
-   'GA',
-   'GD',
-   'Points',
-   'Form',
-   'Next',
-]
-export const Standings = ({ teams }) => {
+export const StandingsTable = ({ teams }) => {
    const { league } = useContext(LeagueContext)
    const rows = createRows(teams) // Teams should be ordered by position
    return (
       <TableContainer
          sx={{ width: '85%', display: 'flex', justifyContent: 'center' }}
       >
-         {/* <img
-            src={`../src/assets/images/PremierLeague/${logo_url}`}
-            alt="Club Logo"
-            style={{ marginRight: '5px' }}
-         /> */}
          <Table
             sx={{ maxWidth: 1250 }}
             aria-label="Standings Table"
@@ -105,7 +41,7 @@ export const Standings = ({ teams }) => {
             </TableHead>
             <TableBody>
                {rows.map((row) => (
-                  <TableRow key={row.id}>
+                  <StyledTableRow key={row.id}>
                      {headers.map((header) => (
                         <StyledTableCell
                            key={`${row.position}-${header}`}
@@ -135,33 +71,10 @@ export const Standings = ({ teams }) => {
                            )}
                         </StyledTableCell>
                      ))}
-                  </TableRow>
+                  </StyledTableRow>
                ))}
             </TableBody>
          </Table>
       </TableContainer>
    )
-}
-
-function createRows(teams) {
-   const rows = teams.map((team) => {
-      return createData(
-         team.id,
-         team.logo_url,
-         team.position,
-         team.name,
-         team.seasonData.games_played,
-         team.seasonData.wins,
-         team.seasonData.draws,
-         team.seasonData.losses,
-         team.seasonData.goals_scored,
-         team.seasonData.goals_conceded,
-         team.seasonData.goals_difference,
-         team.seasonData.points,
-         team.seasonData.form,
-         team.seasonData.next_fixture
-      )
-   })
-
-   return rows
 }
