@@ -223,7 +223,7 @@ export const PremierLeagueData = {
       {
          id: 19,
          name: 'West Ham United',
-         logo_url: 'WestHamLogo.svg',
+         logo_url: 'WestHamUnitedLogo.svg',
          short_name: 'West Ham',
          club_code: 'WHU',
          stadium: 'London Stadium',

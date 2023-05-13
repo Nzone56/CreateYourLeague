@@ -1,4 +1,5 @@
 import {
+   Box,
    CardMedia,
    Table,
    TableBody,
@@ -11,9 +12,10 @@ import {
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { useContext } from 'react'
 import styled from '@emotion/styled'
-import ArsenalLogo from '../../assets/images/PremierLeague/ArsenalLogo.svg'
+
 const createData = (
    id,
+   logo,
    Position,
    Club,
    Played,
@@ -29,6 +31,7 @@ const createData = (
 ) => {
    return {
       id,
+      logo,
       Position,
       Club,
       Played,
@@ -73,7 +76,6 @@ const headers = [
 export const Standings = ({ teams }) => {
    const { league } = useContext(LeagueContext)
    const rows = createRows(teams) // Teams should be ordered by position
-   const logo_url = league.clubs[0].logo_url
    return (
       <TableContainer
          sx={{ width: '85%', display: 'flex', justifyContent: 'center' }}
@@ -103,7 +105,7 @@ export const Standings = ({ teams }) => {
             </TableHead>
             <TableBody>
                {rows.map((row) => (
-                  <TableRow key={row.position}>
+                  <TableRow key={row.id}>
                      {headers.map((header) => (
                         <StyledTableCell
                            key={`${row.position}-${header}`}
@@ -111,10 +113,14 @@ export const Standings = ({ teams }) => {
                            align={header === 'Club' ? 'left' : 'center'}
                         >
                            {header === 'Club' ? (
-                              <>
+                              <Box
+                                 sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                 }}
+                              >
                                  <img
-                                    // src={`../../assets/images/PremierLeague/${row.logo_url}`}
-                                    src={ArsenalLogo}
+                                    src={`../src/assets/images/PremierLeague/${row.logo}`}
                                     alt="Club Logo"
                                     width="30"
                                     height="30"
@@ -123,7 +129,7 @@ export const Standings = ({ teams }) => {
                                     }}
                                  />
                                  {row[header]}
-                              </>
+                              </Box>
                            ) : (
                               row[header]
                            )}
@@ -141,6 +147,7 @@ function createRows(teams) {
    const rows = teams.map((team) => {
       return createData(
          team.id,
+         team.logo_url,
          team.position,
          team.name,
          team.seasonData.games_played,
