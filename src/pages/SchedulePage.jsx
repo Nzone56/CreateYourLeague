@@ -9,7 +9,7 @@ export const SchedulePage = () => {
             display: 'flex',
             flexDirection: 'column',
             height: '100vh',
-            maxWidth: '100%',
+            width: '100%',
          }}
       >
          <Header />

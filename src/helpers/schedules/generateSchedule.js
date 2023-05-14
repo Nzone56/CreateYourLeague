@@ -1,4 +1,4 @@
-export const GenerateMatchWeek = ({ teams, number }) => {
+export const GenerateMatchWeek = ({ teams }) => {
    const numberOfTeams = teams.length
    let matchWeek = []
    let match = []
@@ -15,11 +15,8 @@ export const GenerateSchedule = ({ teams }) => {
    let matchWeek = []
    let matchWeeks = []
    for (let i = 1; i <= 5; i++) {
-      matchWeek = GenerateMatchWeek({ teams, i })
-      console.log(matchWeek)
-      matchWeeks = matchWeeks.concat(`Week ${i}`, matchWeek)
-      // console.log(matchWeeks)
+      matchWeek = GenerateMatchWeek({ teams })
+      matchWeeks = matchWeeks.concat([matchWeek])
    }
-   // console.log(matchWeeks)
    return matchWeeks
 }

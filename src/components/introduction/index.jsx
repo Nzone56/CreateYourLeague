@@ -34,7 +34,12 @@ export const Introduction = () => {
          <Typography variant="h3" mb={4} sx={{ color: 'white' }}>
             SELECT YOUR LEAGUE
          </Typography>
-         <Grid container spacing={2} justifyContent="center">
+         <Grid
+            container
+            spacing={2}
+            justifyContent="center"
+            sx={{ width: '100%' }}
+         >
             <LeagueCards handleSelectLeague={handleSelectLeague} />
          </Grid>
       </Box>

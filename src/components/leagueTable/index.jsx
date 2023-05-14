@@ -19,7 +19,7 @@ export const LeagueTable = () => {
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
-            maxWidth: '100vw',
+            width: '100%',
          }}
       >
          <Typography

@@ -9,6 +9,7 @@ export const StandingsPage = () => {
             display: 'flex',
             flexDirection: 'column',
             height: '100vh',
+            width: '100%',
          }}
       >
          <Header />
