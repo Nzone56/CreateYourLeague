@@ -1,5 +1,6 @@
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
+import { Schedules } from '../components/schedules'
 
 export const SchedulePage = () => {
    return (
@@ -8,10 +9,11 @@ export const SchedulePage = () => {
             display: 'flex',
             flexDirection: 'column',
             height: '100vh',
+            maxWidth: '100%',
          }}
       >
          <Header />
-         <div> Schedule </div>
+         <Schedules />
          <Footer />
       </div>
    )

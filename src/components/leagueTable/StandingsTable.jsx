@@ -11,8 +11,8 @@ import { useContext } from 'react'
 import {
    StyledTableRow,
    StyledTableCell,
-} from '../../helpers/hooks/standings/StyledTable'
-import { headers, createRows } from '../../helpers/hooks/standings/DataToTable'
+} from '../../helpers/standings/styledTable'
+import { headers, createRows } from '../../helpers/standings/dataToTable'
 
 export const StandingsTable = ({ teams }) => {
    const { league } = useContext(LeagueContext)
