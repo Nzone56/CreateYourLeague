@@ -28,6 +28,7 @@ export const PremierLeagueData = {
          stadium: 'Emirates Stadium',
          capacity: 60260,
          manager: 'Unai Emery',
+         city: 'London',
          position: 1,
       },
       {
@@ -39,6 +40,7 @@ export const PremierLeagueData = {
          stadium: 'Villa Park',
          capacity: 42790,
          manager: 'Unai Emery',
+         city: 'Birmingham',
          position: 2,
       },
       {
@@ -50,6 +52,7 @@ export const PremierLeagueData = {
          stadium: 'Vitality Stadium',
          capacity: 11329,
          manager: 'Gary O Neil',
+         city: 'Bournemouth',
          position: 3,
       },
       {
@@ -61,6 +64,7 @@ export const PremierLeagueData = {
          stadium: 'Brentford Community Stadium',
          capacity: 17250,
          manager: 'Thomas Frank',
+         city: 'London',
          position: 4,
       },
       {
@@ -72,6 +76,7 @@ export const PremierLeagueData = {
          stadium: 'Amex Stadium',
          capacity: 30750,
          manager: 'Roberto De Zerbi',
+         city: 'Falmer',
          position: 5,
       },
       {
@@ -83,18 +88,20 @@ export const PremierLeagueData = {
          stadium: 'Stamford Bridge',
          capacity: 41631,
          manager: 'Frank Lampard',
+         city: 'London',
          position: 6,
       },
       {
          id: 7,
          name: 'Crystal Palace',
          logo_url: 'CrystalPalaceLogo.svg',
-         short_name: 'C Palace',
+         short_name: 'Crystal Palace',
          code: 'CRY',
          stadium: 'Selhurst Park',
          capacity: 25456,
          manager: 'Roy Hodgson',
          manager_nationality: 'England',
+         city: 'London',
          position: 7,
       },
       {
@@ -106,6 +113,7 @@ export const PremierLeagueData = {
          stadium: 'Goodison Park',
          capacity: 39572,
          manager: 'Sean Dyche',
+         city: 'Liverpool',
          position: 8,
       },
       {
@@ -117,6 +125,7 @@ export const PremierLeagueData = {
          stadium: 'Craven Cottage',
          capacity: 25700,
          manager: 'Marco Silva',
+         city: 'London',
          position: 9,
       },
       {
@@ -128,6 +137,7 @@ export const PremierLeagueData = {
          stadium: 'Ellan Road',
          capacity: 37890,
          manager: 'Sam Allardyce',
+         city: 'Leeds',
          position: 10,
       },
       {
@@ -139,6 +149,7 @@ export const PremierLeagueData = {
          stadium: 'King Power Stadium',
          capacity: 32273,
          manager: 'Dean Smith',
+         city: 'Leicester',
          position: 11,
       },
       {
@@ -150,6 +161,7 @@ export const PremierLeagueData = {
          stadium: 'Anfield',
          capacity: 53394,
          manager: 'Jürgen Klopp',
+         city: 'Liverpool',
          position: 12,
       },
       {
@@ -161,6 +173,7 @@ export const PremierLeagueData = {
          stadium: 'Etihad Stadium',
          capacity: 55017,
          manager: 'Josep Guardiola',
+         city: 'Manchester',
          position: 13,
       },
       {
@@ -173,6 +186,7 @@ export const PremierLeagueData = {
          capacity: 74994,
          manager: 'Erik Ten Hag',
          manager_nationality: 'Portugal',
+         city: 'Manchester',
          position: 14,
       },
       {
@@ -185,17 +199,19 @@ export const PremierLeagueData = {
          capacity: 52040,
          manager: 'Eddie Howe',
          manager_nationality: 'Spain',
+         city: 'Newcastle',
          position: 15,
       },
       {
          id: 16,
          name: 'Nottingham Forest',
-         short_name: 'Nottingham F',
+         short_name: `Nott'm Forest`,
          logo_url: 'NottinghamForestLogo.svg',
          code: 'NOF',
          stadium: 'City Ground',
          capacity: 30445,
          manager: 'Steve Cooper',
+         city: 'Nottingham',
          position: 16,
       },
       {
@@ -207,6 +223,7 @@ export const PremierLeagueData = {
          stadium: "St. Mary's Stadium",
          capacity: 32384,
          manager: 'Rubén Sellés',
+         city: 'Southampton',
          position: 17,
       },
       {
@@ -218,6 +235,7 @@ export const PremierLeagueData = {
          stadium: 'Tottenham Hotspur Stadium',
          capacity: 62062,
          manager: 'Ryan Mason',
+         city: 'London',
          position: 18,
       },
       {
@@ -229,6 +247,7 @@ export const PremierLeagueData = {
          stadium: 'London Stadium',
          capacity: 60000,
          manager: 'David Moyes',
+         city: 'London',
          position: 19,
       },
       {
@@ -240,6 +259,7 @@ export const PremierLeagueData = {
          stadium: 'Molineux Stadium',
          capacity: 31700,
          manager: 'Julen Lopetegui',
+         city: 'Wolverhampton',
          position: 20,
       },
    ],

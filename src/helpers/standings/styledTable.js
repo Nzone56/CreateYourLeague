@@ -13,8 +13,12 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
    },
 }))
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
-   '&:nth-of-type(5)': {
-      // Select the 5th row
+   '&:nth-of-type(7)': {
+      // Select the 7th row
+      backgroundColor: '#0C890C',
+   },
+   '&:nth-of-type(5), &:nth-of-type(6)': {
+      // Select the 5th and 6th row
       backgroundColor: '#FA7B17',
    },
    '&:nth-of-type(-n+4)': {

@@ -4,17 +4,17 @@ import { LeagueContext } from '../../context/league/LeagueProvider'
 import { GenerateSchedule } from '../../helpers/schedules/generateSchedule'
 import { MatchWeek } from './MatchWeek'
 
-export const Schedules = () => {
+export const Schedule = () => {
    const { league } = useContext(LeagueContext)
    const teamsCode = league.clubs.map((club) => {
       return club.code
    })
-   const schedule = GenerateSchedule({ teams: teamsCode })
+   const schedules = GenerateSchedule({ teams: teamsCode })
 
-   console.log(schedule)
+   console.log(schedules)
    return (
       <Box
-         mt={4}
+         margin={6}
          sx={{
             display: 'flex',
             alignItems: 'center',
@@ -23,19 +23,35 @@ export const Schedules = () => {
          }}
       >
          <Box>
-            <Typography>{league.competition} Fixtures</Typography>
+            <Typography
+               variant="h4"
+               component="h4"
+               sx={{
+                  color: `${league.theme.secondary}`,
+                  fontWeight: 'bold',
+                  fontSize: '40px',
+               }}
+            >
+               {league.competition.toUpperCase() + ' FIXTURES'}
+            </Typography>
          </Box>
          <Box
-            mt={4}
+            margin={8}
             sx={{
                display: 'flex',
                alignItems: 'center',
                justifyContent: 'center',
                flexDirection: 'column',
+               width: '100%',
             }}
          >
-            {schedule.map((matchweek, index) => (
-               <MatchWeek matchweek={matchweek} index={index} key={index} />
+            {schedules.map((matchweek, index) => (
+               <MatchWeek
+                  matchweek={matchweek}
+                  index={index}
+                  key={index}
+                  theme={league.theme}
+               />
             ))}
          </Box>
       </Box>
