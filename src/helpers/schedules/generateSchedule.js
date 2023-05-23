@@ -15,20 +15,34 @@ export const generateSchedule = ({ teams }) => {
          const team2 = teams[numberOfTeams - 1 - j]
 
          // Home and away restrictions
-         const prevMatch = matchDay[j - 1]
-         const prevTeam = prevMatch ? prevMatch[0] : null
-
-         // Alternate the order of teams each matchweek
-         if (j % 2 === 0) {
-            matchDay.push([team1, team2])
+         let homeTeam, awayTeam
+         if (i % 2 === 0) {
+            homeTeam = team1
+            awayTeam = team2
          } else {
-            matchDay.push([team2, team1])
+            homeTeam = team2
+            awayTeam = team1
          }
+
+         // Check if the home or away team has played their maximum consecutive matches
+         const prevMatch = matchDay[j - 1]
+         const prevHomeTeam = prevMatch ? prevMatch[0] : null
+         const prevAwayTeam = prevMatch ? prevMatch[1] : null
+
+         if (
+            (prevHomeTeam === homeTeam && prevHomeTeam !== null) ||
+            (prevAwayTeam === awayTeam && prevAwayTeam !== null)
+         ) {
+            // Rotate the teams for this matchweek
+            ;[homeTeam, awayTeam] = [awayTeam, homeTeam]
+         }
+
+         matchDay.push([homeTeam, awayTeam])
       }
 
       matchSchedule.push(matchDay)
 
-      // Rotation of teams
+      // Rotate the teams for the next matchweek
       teams.splice(1, 0, teams.pop())
    }
 
@@ -42,20 +56,34 @@ export const generateSchedule = ({ teams }) => {
          const team2 = teams[j]
 
          // Home and away restrictions
-         const prevMatch = matchDay[j - 1]
-         const prevTeam = prevMatch ? prevMatch[0] : null
-
-         // Alternate the order of teams each matchweek
-         if (j % 2 === 0) {
-            matchDay.push([team1, team2])
+         let homeTeam, awayTeam
+         if (i % 2 === 0) {
+            homeTeam = team1
+            awayTeam = team2
          } else {
-            matchDay.push([team2, team1])
+            homeTeam = team2
+            awayTeam = team1
          }
+
+         // Check if the home or away team has played their maximum consecutive matches
+         const prevMatch = matchDay[j - 1]
+         const prevHomeTeam = prevMatch ? prevMatch[0] : null
+         const prevAwayTeam = prevMatch ? prevMatch[1] : null
+
+         if (
+            (prevHomeTeam === homeTeam && prevHomeTeam !== null) ||
+            (prevAwayTeam === awayTeam && prevAwayTeam !== null)
+         ) {
+            // Rotate the teams for this matchweek
+            ;[homeTeam, awayTeam] = [awayTeam, homeTeam]
+         }
+
+         matchDay.push([homeTeam, awayTeam])
       }
 
       matchSchedule.push(matchDay)
 
-      // Rotation of teams
+      // Rotate the teams for the next matchweek
       teams.splice(1, 0, teams.pop())
    }
 

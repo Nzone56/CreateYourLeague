@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { generateSchedule } from '../../helpers/schedules/generateSchedule'
 import { MatchWeek } from './MatchWeek'
@@ -9,9 +9,11 @@ export const Schedule = () => {
    const teamsCode = league.clubs.map((club) => {
       return club.code
    })
-   const schedules = generateSchedule({ teams: teamsCode })
+   const schedules = useMemo(
+      () => generateSchedule({ teams: teamsCode }),
+      [teamsCode]
+   )
 
-   console.log(schedules)
    return (
       <Box
          margin={6}
