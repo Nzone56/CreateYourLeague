@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
-import { GenerateSchedule } from '../../helpers/schedules/generateSchedule'
+import { generateSchedule } from '../../helpers/schedules/generateSchedule'
 import { MatchWeek } from './MatchWeek'
 
 export const Schedule = () => {
@@ -9,7 +9,7 @@ export const Schedule = () => {
    const teamsCode = league.clubs.map((club) => {
       return club.code
    })
-   const schedules = GenerateSchedule({ teams: teamsCode })
+   const schedules = generateSchedule({ teams: teamsCode })
 
    console.log(schedules)
    return (
