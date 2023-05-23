@@ -71,7 +71,7 @@ export const MatchWeek = ({ matchweek, index, theme }) => {
                                        flexDirection: 'row',
                                        alignItems: 'center',
                                        justifyContent: 'center',
-                                       width: '60%',
+                                       width: '66%',
                                     }}
                                  >
                                     <Box
@@ -79,7 +79,7 @@ export const MatchWeek = ({ matchweek, index, theme }) => {
                                           display: 'flex',
                                           alignItems: 'center',
                                           justifyContent: 'flex-end',
-                                          width: '25%',
+                                          width: '28%',
                                        }}
                                     >
                                        <Typography
@@ -105,7 +105,7 @@ export const MatchWeek = ({ matchweek, index, theme }) => {
                                        }}
                                     >
                                        <Input
-                                          value={'0'}
+                                          value={'-'}
                                           onChange={handleInputChange}
                                           inputProps={{
                                              maxLength: 2,
@@ -122,7 +122,7 @@ export const MatchWeek = ({ matchweek, index, theme }) => {
                                           }}
                                        />
                                        <Input
-                                          value={'0'}
+                                          value={'-'}
                                           onChange={handleInputChange}
                                           inputProps={{
                                              maxLength: 2,
@@ -143,7 +143,7 @@ export const MatchWeek = ({ matchweek, index, theme }) => {
                                           display: 'flex',
                                           alignItems: 'center',
                                           justifyContent: 'flex-start',
-                                          width: '25%',
+                                          width: '28%',
                                        }}
                                     >
                                        <img
