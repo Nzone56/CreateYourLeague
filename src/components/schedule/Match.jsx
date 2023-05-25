@@ -39,7 +39,7 @@ export const Match = ({ match, theme }) => {
                      flexDirection: 'row',
                      alignItems: 'center',
                      justifyContent: 'center',
-                     width: '66%',
+                     width: '56%',
                   }}
                >
                   <Box
@@ -47,7 +47,7 @@ export const Match = ({ match, theme }) => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-end',
-                        width: '28%',
+                        width: '23%',
                      }}
                   >
                      <Typography variant="h6" component="h6" mr={1}>
@@ -107,7 +107,7 @@ export const Match = ({ match, theme }) => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
-                        width: '28%',
+                        width: '23%',
                      }}
                   >
                      <img
@@ -126,7 +126,7 @@ export const Match = ({ match, theme }) => {
                      display: 'flex',
                      alignItems: 'center',
                      justifyContent: 'flex-start',
-                     width: '20%',
+                     width: '25%',
                   }}
                >
                   <img

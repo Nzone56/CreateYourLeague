@@ -6,8 +6,8 @@ import {
    Typography,
 } from '@mui/material'
 import { Match } from './Match'
-import { useLocation, useParams } from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { useContext } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
 
@@ -17,55 +17,56 @@ export const MatchWeek = () => {
    const theme = league.theme
    const { id } = useParams()
    const schedule = schedules[id - 1]
-   // const [matchweek, setMatchweek] = useState('')
-   // const location = useLocation()
 
-   // const getMatchweek = () => {
-   //    const matchweekById = id
-   //    setMatchweek(matchweekById)
-   // }
-   // //Get matchweek data
-   // useEffect(() => {
-   //    getMatchweek()
-   // }, [])
-
-   // //Change country page
-   // useEffect(() => {
-   //    getMatchweek()
-   // }, [location.pathname])
-
-   return (
-      <Box sx={{ width: '100%' }}>
-         <Box sx={{ width: '100%' }} margin={1}>
-            <Accordion>
-               <AccordionSummary sx={{ backgroundColor: theme.secondary }}>
-                  <Typography
-                     align="center"
-                     sx={{
-                        width: '100%',
-                        color: `${theme.Other2}`,
-                        fontSize: '20px',
-                        fontWeight: 'bold',
-                     }}
-                  >
-                     MatchWeek #{id}
-                  </Typography>
-               </AccordionSummary>
-               <AccordionDetails>
-                  <Typography component="ul" sx={{ listStyleType: 'none' }}>
-                     {schedule.map((match) => {
-                        return (
-                           <Match
-                              match={match}
-                              theme={theme}
-                              key={match[0] + match[1]}
-                           />
-                        )
-                     })}
-                  </Typography>
-               </AccordionDetails>
-            </Accordion>
-         </Box>
+   return !id ? (
+      <Box
+         sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+         }}
+      >
+         <Typography>smth will be here, but idk what tbh </Typography>
+         <Typography component="ul">IDEAS: </Typography>
+         <li> Re gen scehdules button </li>
+         <li> Some info/preview maybe </li>
+         <li> Open to ideas </li>
+      </Box>
+   ) : (
+      <Box
+         sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+         }}
+         m={4}
+      >
+         <Typography
+            align="center"
+            sx={{
+               color: `${theme.Other2}`,
+               fontSize: '20px',
+               fontWeight: 'bold',
+               backgroundColor: theme.secondary,
+            }}
+         >
+            MatchWeek #{id}
+         </Typography>
+         <Typography
+            component="ul"
+            sx={{ listStyleType: 'none', paddingInlineStart: '0' }}
+         >
+            {schedule?.map((match) => {
+               return (
+                  <Match
+                     match={match}
+                     theme={theme}
+                     key={match[0] + match[1]}
+                  />
+               )
+            })}
+         </Typography>
       </Box>
    )
 }

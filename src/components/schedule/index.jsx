@@ -43,11 +43,10 @@ export const Schedule = () => {
    }
    return (
       <Box
-         margin={6}
+         margin={4}
          sx={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
             flexDirection: 'column',
          }}
       >
@@ -62,7 +61,7 @@ export const Schedule = () => {
          >
             {league.competition.toUpperCase() + ' FIXTURES'}
          </Typography>
-         <Box sx={{ width: '100%', display: 'flex' }}>
+         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
             <Tabs
                value={activeTab}
                onChange={handleTabChange}
