@@ -1,6 +1,7 @@
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 import { Schedule } from '../components/schedule'
+import { MatchWeek } from '../components/schedule/MatchWeek'
 
 export const SchedulePage = () => {
    return (
@@ -14,6 +15,7 @@ export const SchedulePage = () => {
       >
          <Header />
          <Schedule />
+         <MatchWeek />
          <Footer />
       </div>
    )

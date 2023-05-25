@@ -1,14 +1,14 @@
 import './styles/index.css'
 import { LeagueProvider } from './context/league/LeagueProvider'
-import { ThemeProvider } from './context/themes/ThemeProvider'
 import { AppRouter } from './router/AppRouter'
+import { ScheduleProvider } from './context/schedule/ScheduleProvider'
 
 export const LeagueApp = () => {
    return (
-      // <ThemeProvider>
       <LeagueProvider>
-         <AppRouter />
+         <ScheduleProvider>
+            <AppRouter />
+         </ScheduleProvider>
       </LeagueProvider>
-      // </ThemeProvider>
    )
 }

@@ -15,19 +15,19 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
    //CONFERENCE LEAGUE
-   '&:nth-of-type(7) td:first-child': {
+   '&:nth-of-type(7) td:first-of-type': {
       backgroundColor: '#0C890C',
    },
    //EUROPA LEAGUE
-   '&:nth-of-type(5) td:first-child, &:nth-of-type(6) td:first-child': {
+   '&:nth-of-type(5) td:first-of-type, &:nth-of-type(6) td:first-of-type': {
       backgroundColor: '#FA7B17',
    },
    //CHAMPIONS LEAGUE
-   '&:nth-child(-n+4) td:first-child': {
+   '&:nth-of-type(-n+4) td:first-of-type': {
       backgroundColor: '#4285F4',
    },
    //RELEGATION
-   '&:nth-last-child(-n+3) td:first-child': {
+   '&:nth-last-of-type(-n+3) td:first-of-type': {
       backgroundColor: '#EA4335',
    },
 }))
