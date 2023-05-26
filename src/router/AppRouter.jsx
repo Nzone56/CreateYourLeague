@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import { useSeason } from '../helpers/hooks/useSeason'
 import {
    ClubsPage,
    HomePage,

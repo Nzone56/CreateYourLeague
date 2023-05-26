@@ -43,46 +43,57 @@ export const Schedule = () => {
    }
    return (
       <Box
-         margin={4}
-         sx={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'column',
-         }}
+      // TODO: SELECT BANNER IMAGE FOR SCHEDULE PAGE
+      //    sx={{
+      //       backgroundImage:
+      //          'url(../../../src/assets/images/PremierLeague/PremierLeaguebg.png)',
+      //       backgroundSize: 'cover',
+      //    }}
       >
-         <Typography
-            variant="h4"
-            component="h4"
+         <Box
+            margin={4}
             sx={{
-               color: `${league.theme.secondary}`,
-               fontWeight: 'bold',
-               fontSize: '40px',
+               display: 'flex',
+               alignItems: 'center',
+               flexDirection: 'column',
             }}
          >
-            {league.competition.toUpperCase() + ' FIXTURES'}
-         </Typography>
-         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <Tabs
-               value={activeTab}
-               onChange={handleTabChange}
+            <Typography
+               variant="h4"
+               component="h4"
                sx={{
-                  backgroundColor: league.theme.secondary,
-                  '& .MuiTabs-indicator': {
-                     backgroundColor: league.theme.secondary,
-                  },
+                  color: `${league.theme.secondary}`,
+                  fontWeight: 'bold',
+                  fontSize: '40px',
                }}
-               centered
             >
-               <Tab
-                  component={Link}
-                  to="/season/schedule"
-                  label="HOME"
-                  value="/season/schedule"
-                  sx={styleTab}
-                  key="home"
-               />
-               {generateTabs(styleTab)}
-            </Tabs>
+               {league.competition.toUpperCase() + ' FIXTURES'}
+            </Typography>
+            <Box
+               sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+            >
+               <Tabs
+                  value={activeTab}
+                  onChange={handleTabChange}
+                  sx={{
+                     backgroundColor: league.theme.secondary,
+                     '& .MuiTabs-indicator': {
+                        backgroundColor: league.theme.secondary,
+                     },
+                  }}
+                  centered
+               >
+                  <Tab
+                     component={Link}
+                     to="/season/schedule"
+                     label="HOME"
+                     value="/season/schedule"
+                     sx={styleTab}
+                     key="home"
+                  />
+                  {generateTabs(styleTab)}
+               </Tabs>
+            </Box>
          </Box>
       </Box>
    )

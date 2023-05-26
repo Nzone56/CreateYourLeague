@@ -1,10 +1,4 @@
-import {
-   Accordion,
-   AccordionDetails,
-   AccordionSummary,
-   Box,
-   Typography,
-} from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { Match } from './Match'
 import { useParams } from 'react-router-dom'
 import { useContext } from 'react'
@@ -18,6 +12,11 @@ export const MatchWeek = () => {
    const { id } = useParams()
    const schedule = schedules[id - 1]
 
+   const addPoints = () => {
+      // league.clubs[0].seasonData.points++
+      league.clubs[0].position = 21
+   }
+
    return !id ? (
       <Box
          sx={{
@@ -27,11 +26,13 @@ export const MatchWeek = () => {
             flexDirection: 'column',
          }}
       >
+         {/* TODO: Put some shit here */}
          <Typography>smth will be here, but idk what tbh </Typography>
          <Typography component="ul">IDEAS: </Typography>
          <li> Re gen scehdules button </li>
          <li> Some info/preview maybe </li>
          <li> Open to ideas </li>
+         <Button onClick={addPoints}> Add Arsenal a point</Button>
       </Box>
    ) : (
       <Box
@@ -39,8 +40,13 @@ export const MatchWeek = () => {
             display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
+            // TODO: SELECT BG IMAGE FOR SCHEDULE
+            // backgroundImage:
+            //    'url(../../../src/assets/images/PremierLeague/bgWhite.png)',
+            // backgroundSize: 'cover',
          }}
          m={4}
+         mt={0}
       >
          <Typography
             align="center"
