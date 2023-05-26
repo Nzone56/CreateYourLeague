@@ -13,8 +13,8 @@ export const MatchWeek = () => {
    const schedule = schedules[id - 1]
 
    const addPoints = () => {
-      // league.clubs[0].seasonData.points++
-      league.clubs[0].position = 21
+      league.clubs[1].seasonData.points++
+      // league.clubs[0].position = 21
    }
 
    return !id ? (

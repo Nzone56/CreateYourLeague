@@ -2,17 +2,18 @@ import { useContext, useEffect, useState } from 'react'
 import { Box, CardMedia, Typography } from '@mui/material'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { StandingsTable } from './StandingsTable'
+import { getUpdatedTeams } from '../../helpers/standings/getUpdatedTeams'
 
 export const LeagueTable = () => {
    const { league } = useContext(LeagueContext)
    const [teams, setTeams] = useState(league.clubs)
 
-   // const getTeams = getUpdatedTeams()
-
    useEffect(() => {
-      const sortedTeams = [...league.clubs].sort(
+      const updatedTeams = getUpdatedTeams(teams)
+      const sortedTeams = [...updatedTeams].sort(
          (a, b) => a.position - b.position
       )
+
       setTeams(sortedTeams)
    }, [league.clubs])
 
