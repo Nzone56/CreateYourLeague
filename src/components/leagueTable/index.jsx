@@ -13,7 +13,6 @@ export const LeagueTable = () => {
       const sortedTeams = [...updatedTeams].sort(
          (a, b) => a.position - b.position
       )
-
       setTeams(sortedTeams)
    }, [league.clubs])
 

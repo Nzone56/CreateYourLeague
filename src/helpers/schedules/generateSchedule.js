@@ -37,7 +37,7 @@ export const generateSchedule = ({ teams }) => {
             ;[homeTeam, awayTeam] = [awayTeam, homeTeam]
          }
 
-         matchDay.push([homeTeam, awayTeam])
+         matchDay.push([homeTeam, '-', '-', awayTeam])
       }
 
       matchSchedule.push(matchDay)
@@ -78,7 +78,7 @@ export const generateSchedule = ({ teams }) => {
             ;[homeTeam, awayTeam] = [awayTeam, homeTeam]
          }
 
-         matchDay.push([homeTeam, awayTeam])
+         matchDay.push([homeTeam, '-', '-', awayTeam])
       }
 
       matchSchedule.push(matchDay)

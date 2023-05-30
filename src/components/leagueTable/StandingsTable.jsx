@@ -1,10 +1,10 @@
 import {
-   Box,
    Table,
    TableBody,
    TableContainer,
    TableHead,
    TableRow,
+   Typography,
 } from '@mui/material'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { useContext } from 'react'
@@ -13,6 +13,7 @@ import {
    StyledTableCell,
 } from '../../helpers/standings/styledTable'
 import { headers, createRows } from '../../helpers/standings/dataToTable'
+import { ClubCell } from './ClubCell'
 
 export const StandingsTable = ({ teams }) => {
    const { league } = useContext(LeagueContext)
@@ -49,23 +50,14 @@ export const StandingsTable = ({ teams }) => {
                            align={header === 'Club' ? 'left' : 'center'}
                         >
                            {header === 'Club' ? (
-                              <Box
-                                 sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                 }}
-                              >
-                                 <img
-                                    src={`../src/assets/images/PremierLeague/${row.logo}`}
-                                    alt="Club Logo"
-                                    width="30"
-                                    height="30"
-                                    style={{
-                                       marginRight: '5px',
-                                    }}
-                                 />
+                              <ClubCell
+                                 logo={row.logo}
+                                 clubName={row[header]}
+                              />
+                           ) : header === 'Points' ? (
+                              <Typography sx={{ fontWeight: 'bold' }}>
                                  {row[header]}
-                              </Box>
+                              </Typography>
                            ) : (
                               row[header]
                            )}

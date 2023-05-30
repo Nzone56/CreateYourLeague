@@ -63,12 +63,13 @@ export const MatchWeek = () => {
             component="ul"
             sx={{ listStyleType: 'none', paddingInlineStart: '0' }}
          >
-            {schedule?.map((match) => {
+            {schedule?.map((match, index) => {
                return (
                   <Match
                      match={match}
                      theme={theme}
-                     key={match[0] + match[1]}
+                     key={match[0] + match[3]}
+                     id={index}
                   />
                )
             })}
