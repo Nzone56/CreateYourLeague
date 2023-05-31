@@ -42,6 +42,7 @@ export const LeagueTable = () => {
                sx={{
                   display: 'flex',
                   flexDirection: 'row',
+                  alignItems: 'center',
                   backgroundColor: league.theme.tertiary,
                }}
             >
@@ -53,17 +54,20 @@ export const LeagueTable = () => {
                >
                   PREMIER
                </Typography>
-               <CardMedia
-                  component="img"
-                  src={`../src/assets/images/leagues/${league.logo_url}`}
-                  alt="League Logo"
-                  height="50"
-                  sx={{
-                     maxWidth: '100%',
-                     maxHeight: '100%',
-                     objectFit: 'contain',
-                  }}
-               />
+               <Box m={1}>
+                  <CardMedia
+                     component="img"
+                     src={`../src/assets/images/leagues/${league.logo_url}`}
+                     alt="League Logo"
+                     height="50"
+                     sx={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
+                     }}
+                  />
+               </Box>
+
                <Typography
                   p={2}
                   sx={{

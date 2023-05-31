@@ -54,7 +54,6 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                      margin: '10%',
                   }}
                >
-                  {' '}
                   {!isHovered ? (
                      <CardMedia
                         component="img"
@@ -90,7 +89,9 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                            title="Logo"
                         />
                         <CardContent>
-                           <Typography> {league.competition} </Typography>
+                           <Typography sx={{ color: league.theme.Other2 }}>
+                              {league.competition}
+                           </Typography>
                         </CardContent>
                         <CardActions>
                            <PlayCircleFilled
