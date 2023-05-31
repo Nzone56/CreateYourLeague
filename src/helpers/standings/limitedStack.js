@@ -5,9 +5,9 @@ export class limitedStack {
    }
    push(item) {
       if (this.isFull()) {
-         this.stack.shift()
+         this.stack.pop()
       }
-      this.stack.push(item)
+      this.stack.unshift(item)
    }
    isFull() {
       return this.stack.length === this.capacity

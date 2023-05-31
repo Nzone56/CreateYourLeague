@@ -77,7 +77,6 @@ const updateSeasonData = (club1, club2, { match }) => {
    //Club2 won the match
    if (match[2] > match[1]) {
       //Club2 update [WINNER]
-      console.log('GANO EL: ', club2.name)
       club2.seasonData.wins++
       club2.seasonData.away_wins++
 
@@ -112,7 +111,6 @@ const updateSeasonData = (club1, club2, { match }) => {
    // TIE
    if (match[1] === match[2]) {
       //Club2 update [TIE]
-      console.log('EMPATARON EL: ', club1.name, ' y EL: ', club2.name)
       club2.seasonData.draws++
       club2.seasonData.away_draws++
 
