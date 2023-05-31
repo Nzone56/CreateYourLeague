@@ -1,4 +1,5 @@
 import {
+   Box,
    Table,
    TableBody,
    TableContainer,
@@ -58,6 +59,45 @@ export const StandingsTable = ({ teams }) => {
                               <Typography sx={{ fontWeight: 'bold' }}>
                                  {row[header]}
                               </Typography>
+                           ) : header === 'Form' ? (
+                              <Box
+                                 style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                 }}
+                              >
+                                 {row[header].map((item, index) => (
+                                    <Typography
+                                       key={index}
+                                       sx={{
+                                          fontWeight: 'bold',
+                                          color:
+                                             item === 'W'
+                                                ? 'green'
+                                                : item === 'D'
+                                                ? 'gray'
+                                                : 'red',
+                                          marginRight: '5px',
+                                       }}
+                                    >
+                                       {item}
+                                    </Typography>
+                                 ))}
+                              </Box>
+                           ) : header === 'Next' ? (
+                              <Box
+                                 sx={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                 }}
+                              >
+                                 <img
+                                    src={`../src/assets/images/PremierLeague/${row[header]}`}
+                                    alt="Club Logo"
+                                    width="30"
+                                    height="30"
+                                 />
+                              </Box>
                            ) : (
                               row[header]
                            )}

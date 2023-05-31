@@ -1,4 +1,4 @@
-import { createForm, limitedStack } from '../../helpers/standings/limitedStack'
+import { createForm } from '../../helpers/standings/limitedStack'
 
 export const ClubStatsTemplate = {
    games_played: 0,

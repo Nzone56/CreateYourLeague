@@ -1,16 +1,24 @@
 import { ClubStatsTemplate } from '../../assets/data'
+import { getLogoNextFixture } from './getNextFixture'
+import { getUpdatedTeams } from './getUpdatedTeams'
 import { createForm } from './limitedStack'
 
 export const updateResults = (schedules, teams) => {
-   teams = resetSeasonData(teams)
+   console.log(schedules)
+   teams = resetSeasonData(teams, schedules)
    searchResults(schedules, teams)
    return teams
 }
-const resetSeasonData = (teams) => {
+
+const resetSeasonData = (teams, schedules) => {
    return teams.map((team) => {
       return {
          ...team,
-         seasonData: { ...ClubStatsTemplate, form: createForm() },
+         seasonData: {
+            ...ClubStatsTemplate,
+            form: createForm(),
+            next_fixture: getLogoNextFixture(team, schedules, teams),
+         },
       }
    })
 }
@@ -21,26 +29,34 @@ const searchResults = (schedules, teams) => {
       for (let j = 0; j < 10; j++) {
          // Match was played
          if (schedules[i][j][1] !== '-' && schedules[i][j][2] !== '-') {
-            // console.log(schedules[i][j])
             club1 = teams.filter((team) => {
                return team.code === schedules[i][j][0]
             }) // Get club 1
             club2 = teams.filter((team) => {
                return team.code === schedules[i][j][3]
             }) // Get club 2
-            updateSeasonData(club1[0], club2[0], { match: schedules[i][j] })
+            updateSeasonData(
+               club1[0],
+               club2[0],
+               { match: schedules[i][j] },
+               schedules,
+               teams
+            )
          }
       }
    }
 }
 
-const updateSeasonData = (club1, club2, { match }) => {
+const updateSeasonData = (club1, club2, { match }, schedules, teams) => {
    //Club1 update
    club1.seasonData.games_played++
    club1.seasonData.home_games_played++
+   club1.seasonData.next_fixture = getLogoNextFixture(club1, schedules, teams)
+
    //Club2 update
    club2.seasonData.games_played++
    club2.seasonData.away_games_played++
+   club2.seasonData.next_fixture = getLogoNextFixture(club2, schedules, teams)
 
    //Club1 won the match
    if (match[1] > match[2]) {
