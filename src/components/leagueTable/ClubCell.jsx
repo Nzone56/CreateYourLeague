@@ -1,10 +1,10 @@
 import { Box } from '@mui/material'
 
-export const ClubCell = ({ logo, clubName }) => {
+export const ClubCell = ({ clubName }) => {
    return (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
          <img
-            src={`../src/assets/images/PremierLeague/${logo}`}
+            src={`../../../src/assets/images/PremierLeague/${clubName}/logo.svg`}
             alt="Club Logo"
             width="30"
             height="30"

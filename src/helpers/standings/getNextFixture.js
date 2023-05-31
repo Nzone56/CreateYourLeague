@@ -1,5 +1,4 @@
 const getNextFixture = (club, matchweek, schedules) => {
-   console.log(schedules)
    if (!schedules) return null
 
    const matches = schedules[matchweek]
@@ -25,5 +24,5 @@ export const getLogoNextFixture = (club, schedules, teams) => {
       return club.code === nextCode
    })
 
-   return nextFixture[0]?.logo_url
+   return nextFixture[0]?.name
 }

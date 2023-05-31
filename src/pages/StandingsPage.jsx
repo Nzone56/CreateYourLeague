@@ -1,10 +1,11 @@
 import { LeagueTable } from '../components/leagueTable'
 import { Header } from '../components/header'
 import { Footer } from '../components/footer'
+import { Box } from '@mui/material'
 
 export const StandingsPage = () => {
    return (
-      <div
+      <Box
          style={{
             display: 'flex',
             flexDirection: 'column',
@@ -15,6 +16,6 @@ export const StandingsPage = () => {
          <Header />
          <LeagueTable />
          <Footer />
-      </div>
+      </Box>
    )
 }

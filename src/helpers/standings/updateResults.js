@@ -1,10 +1,8 @@
 import { ClubStatsTemplate } from '../../assets/data'
 import { getLogoNextFixture } from './getNextFixture'
-import { getUpdatedTeams } from './getUpdatedTeams'
 import { createForm } from './limitedStack'
 
 export const updateResults = (schedules, teams) => {
-   console.log(schedules)
    teams = resetSeasonData(teams, schedules)
    searchResults(schedules, teams)
    return teams

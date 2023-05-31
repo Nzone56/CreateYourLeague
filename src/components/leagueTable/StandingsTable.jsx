@@ -51,10 +51,7 @@ export const StandingsTable = ({ teams }) => {
                            align={header === 'Club' ? 'left' : 'center'}
                         >
                            {header === 'Club' ? (
-                              <ClubCell
-                                 logo={row.logo}
-                                 clubName={row[header]}
-                              />
+                              <ClubCell clubName={row[header]} />
                            ) : header === 'Points' ? (
                               <Typography sx={{ fontWeight: 'bold' }}>
                                  {row[header]}
@@ -92,7 +89,7 @@ export const StandingsTable = ({ teams }) => {
                                  }}
                               >
                                  <img
-                                    src={`../src/assets/images/PremierLeague/${row[header]}`}
+                                    src={`../src/assets/images/PremierLeague/${row[header]}/logo.svg`}
                                     alt="Club Logo"
                                     width="30"
                                     height="30"

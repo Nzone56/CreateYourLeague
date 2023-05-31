@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material'
-
 export const Team = ({ club, reverseOrder }) => {
    return (
       <>
@@ -20,14 +19,12 @@ export const Team = ({ club, reverseOrder }) => {
                >
                   {club.short_name}
                </Typography>
-               {club.logo_url && (
-                  <img
-                     src={`../../../src/assets/images/PremierLeague/${club.logo_url}`}
-                     alt={club.short_name}
-                     width="25"
-                     height="25"
-                  />
-               )}
+               <img
+                  src={`../../../src/assets/images/PremierLeague/${club.name}/logo.svg`}
+                  alt={club.short_name}
+                  width="25"
+                  height="25"
+               />
             </Box>
          ) : (
             <Box
@@ -35,18 +32,15 @@ export const Team = ({ club, reverseOrder }) => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'flex-start',
-
                   width: '23%',
                }}
             >
-               {club.logo_url && (
-                  <img
-                     src={`../../../src/assets/images/PremierLeague/${club.logo_url}`}
-                     alt={club.short_name}
-                     width="25"
-                     height="25"
-                  />
-               )}
+               <img
+                  src={`../../../src/assets/images/PremierLeague/${club.name}/logo.svg`}
+                  alt={club.short_name}
+                  width="25"
+                  height="25"
+               />
                <Typography
                   variant="h6"
                   component="h6"

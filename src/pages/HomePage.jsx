@@ -1,9 +1,10 @@
+import { Box } from '@mui/material'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 
 export const HomePage = () => {
    return (
-      <div
+      <Box
          style={{
             display: 'flex',
             flexDirection: 'column',
@@ -13,6 +14,6 @@ export const HomePage = () => {
          <Header />
          <div> Home </div>
          <Footer />
-      </div>
+      </Box>
    )
 }

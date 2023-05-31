@@ -22,7 +22,6 @@ export const PremierLeagueData = {
       {
          id: 1,
          name: 'Arsenal',
-         logo_url: 'ArsenalLogo.svg',
          short_name: 'Arsenal',
          code: 'ARS',
          stadium: 'Emirates Stadium',
@@ -34,7 +33,6 @@ export const PremierLeagueData = {
       {
          id: 2,
          name: 'Aston Villa',
-         logo_url: 'AstonVillaLogo.svg',
          short_name: 'Aston Villa',
          code: 'AST',
          stadium: 'Villa Park',
@@ -46,7 +44,6 @@ export const PremierLeagueData = {
       {
          id: 3,
          name: 'Bournemouth',
-         logo_url: 'BournemouthLogo.svg',
          short_name: 'Bournemouth',
          code: 'BOU',
          stadium: 'Vitality Stadium',
@@ -58,7 +55,6 @@ export const PremierLeagueData = {
       {
          id: 4,
          name: 'Brentford',
-         logo_url: 'BrentfordLogo.svg',
          short_name: 'Brentford',
          code: 'BRE',
          stadium: 'Brentford Community Stadium',
@@ -70,7 +66,6 @@ export const PremierLeagueData = {
       {
          id: 5,
          name: 'Brighton and Hove Albion',
-         logo_url: 'BrightonLogo.svg',
          short_name: 'Brighton',
          code: 'BHA',
          stadium: 'Amex Stadium',
@@ -82,7 +77,6 @@ export const PremierLeagueData = {
       {
          id: 6,
          name: 'Chelsea',
-         logo_url: 'ChelseaLogo.svg',
          short_name: 'Chelsea',
          code: 'CHE',
          stadium: 'Stamford Bridge',
@@ -94,7 +88,6 @@ export const PremierLeagueData = {
       {
          id: 7,
          name: 'Crystal Palace',
-         logo_url: 'CrystalPalaceLogo.svg',
          short_name: 'Crystal Palace',
          code: 'CRY',
          stadium: 'Selhurst Park',
@@ -107,7 +100,6 @@ export const PremierLeagueData = {
       {
          id: 8,
          name: 'Everton',
-         logo_url: 'EvertonLogo.svg',
          short_name: 'Everton',
          code: 'EVE',
          stadium: 'Goodison Park',
@@ -119,7 +111,6 @@ export const PremierLeagueData = {
       {
          id: 9,
          name: 'Fulham',
-         logo_url: 'FulhamLogo.svg',
          short_name: 'Fulham',
          code: 'FUL',
          stadium: 'Craven Cottage',
@@ -131,7 +122,6 @@ export const PremierLeagueData = {
       {
          id: 10,
          name: 'Leeds United',
-         logo_url: 'LeedsLogo.svg',
          short_name: 'Leeds',
          code: 'LED',
          stadium: 'Ellan Road',
@@ -143,7 +133,6 @@ export const PremierLeagueData = {
       {
          id: 11,
          name: 'Leicester City',
-         logo_url: 'LeicesterLogo.svg',
          short_name: 'Leicester',
          code: 'LEI',
          stadium: 'King Power Stadium',
@@ -155,7 +144,6 @@ export const PremierLeagueData = {
       {
          id: 12,
          name: 'Liverpool',
-         logo_url: 'LiverpoolLogo.svg',
          short_name: 'Liverpool',
          code: 'LIV',
          stadium: 'Anfield',
@@ -167,7 +155,6 @@ export const PremierLeagueData = {
       {
          id: 13,
          name: 'Manchester City',
-         logo_url: 'ManchesterCityLogo.svg',
          short_name: 'Man City',
          code: 'MCI',
          stadium: 'Etihad Stadium',
@@ -179,7 +166,6 @@ export const PremierLeagueData = {
       {
          id: 14,
          name: 'Manchester United',
-         logo_url: 'ManchesterUnitedLogo.svg',
          short_name: 'Man Utd',
          code: 'MUN',
          stadium: 'Old Trafford',
@@ -193,7 +179,6 @@ export const PremierLeagueData = {
          id: 15,
          name: 'Newcastle United',
          short_name: 'Newcastle',
-         logo_url: 'NewcastleLogo.svg',
          code: 'NEW',
          stadium: "St. James' Park",
          capacity: 52040,
@@ -206,7 +191,6 @@ export const PremierLeagueData = {
          id: 16,
          name: 'Nottingham Forest',
          short_name: `Nott'm Forest`,
-         logo_url: 'NottinghamForestLogo.svg',
          code: 'NOF',
          stadium: 'City Ground',
          capacity: 30445,
@@ -217,7 +201,6 @@ export const PremierLeagueData = {
       {
          id: 17,
          name: 'Southampton',
-         logo_url: 'SouthamptonLogo.svg',
          short_name: 'Southampton',
          code: 'SOU',
          stadium: "St. Mary's Stadium",
@@ -229,7 +212,6 @@ export const PremierLeagueData = {
       {
          id: 18,
          name: 'Tottenham Hotspur',
-         logo_url: 'TottenhamHotspurLogo.svg',
          short_name: 'Spurs',
          code: 'TOT',
          stadium: 'Tottenham Hotspur Stadium',
@@ -241,7 +223,6 @@ export const PremierLeagueData = {
       {
          id: 19,
          name: 'West Ham United',
-         logo_url: 'WestHamUnitedLogo.svg',
          short_name: 'West Ham',
          code: 'WHU',
          stadium: 'London Stadium',
@@ -253,7 +234,6 @@ export const PremierLeagueData = {
       {
          id: 20,
          name: 'Wolverhampton Wanderers',
-         logo_url: 'WolverhamptonLogo.svg',
          short_name: 'Wolves',
          code: 'WOL',
          stadium: 'Molineux Stadium',
