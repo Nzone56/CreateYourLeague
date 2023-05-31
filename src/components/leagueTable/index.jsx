@@ -3,13 +3,14 @@ import { Box, CardMedia, Typography } from '@mui/material'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { StandingsTable } from './StandingsTable'
 import { getUpdatedTeams } from '../../helpers/standings/getUpdatedTeams'
+import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
 
 export const LeagueTable = () => {
    const { league } = useContext(LeagueContext)
+   const { schedules } = useContext(ScheduleContext)
    const [teams, setTeams] = useState(league.clubs)
-
    useEffect(() => {
-      const updatedTeams = getUpdatedTeams(teams)
+      const updatedTeams = getUpdatedTeams(teams, schedules)
       const sortedTeams = [...updatedTeams].sort(
          (a, b) => a.position - b.position
       )

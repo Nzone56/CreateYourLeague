@@ -7,18 +7,22 @@ export const MatchResult = ({ theme, result, setResult, matchId }) => {
    const { updateResult } = useContext(ScheduleContext)
    const { id } = useParams()
    const matchweek = id - 1
+
    useEffect(() => {
       updateResult(matchweek, matchId, result)
    }, [result])
 
    const handleInputChange = ({ target }) => {
-      const newValue = target.value
+      const inputValue = target.value
       const inputId = target.id
+      const isValidInput = /^-?\d*$/.test(inputValue)
 
-      if (inputId === 'HomeTeam') {
-         setResult([newValue, result[1]])
-      } else if (inputId === 'AwayTeam') {
-         setResult([result[0], newValue])
+      if (isValidInput) {
+         if (inputId === 'HomeTeam') {
+            setResult([inputValue, result[1]])
+         } else if (inputId === 'AwayTeam') {
+            setResult([result[0], inputValue])
+         }
       }
    }
 

@@ -18,7 +18,6 @@ const ScheduleProvider = ({ children }) => {
 
    const updateResult = (matchweek, matchId, result) => {
       setSchedules((prevSchedules) => {
-         console.log(matchweek, matchId, result)
          const updatedSchedules = [...prevSchedules]
          updatedSchedules[matchweek][matchId][1] = result[0]
          updatedSchedules[matchweek][matchId][2] = result[1]

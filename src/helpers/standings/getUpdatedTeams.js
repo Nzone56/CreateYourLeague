@@ -1,5 +1,12 @@
+import { updateResults } from './updateResults'
+
 // Method that depending on league poijnts / Goal Diff / Goals favor / Goals Against manage league clubs positions
-export const getUpdatedTeams = (teams) => {
+export const getUpdatedTeams = (teams, schedules) => {
+   teams = updateResults(schedules, teams)
+   return updateTeamsPosition(teams)
+}
+
+export const updateTeamsPosition = (teams) => {
    let sortedTeams = sortTeams(teams)
    for (let i = 0; i < sortedTeams.length; i++) {
       sortedTeams[i].position = i + 1
