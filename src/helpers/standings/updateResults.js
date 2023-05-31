@@ -1,8 +1,8 @@
 import { ClubStatsTemplate } from '../../assets/data'
+import { createForm } from './limitedStack'
 
 export const updateResults = (schedules, teams) => {
    teams = resetSeasonData(teams)
-   console.log(teams)
    searchResults(schedules, teams)
    return teams
 }
@@ -10,7 +10,7 @@ const resetSeasonData = (teams) => {
    return teams.map((team) => {
       return {
          ...team,
-         seasonData: { ...ClubStatsTemplate },
+         seasonData: { ...ClubStatsTemplate, form: createForm() },
       }
    })
 }
@@ -29,8 +29,6 @@ const searchResults = (schedules, teams) => {
                return team.code === schedules[i][j][3]
             }) // Get club 2
             updateSeasonData(club1[0], club2[0], { match: schedules[i][j] })
-            // console.log(club1)
-            // console.log(club2)
          }
       }
    }
@@ -38,10 +36,8 @@ const searchResults = (schedules, teams) => {
 
 const updateSeasonData = (club1, club2, { match }) => {
    //Club1 update
-   console.log(match)
    club1.seasonData.games_played++
    club1.seasonData.home_games_played++
-
    //Club2 update
    club2.seasonData.games_played++
    club2.seasonData.away_games_played++
@@ -49,7 +45,6 @@ const updateSeasonData = (club1, club2, { match }) => {
    //Club1 won the match
    if (match[1] > match[2]) {
       //Club1 update [WINNER]
-      console.log('GANO EL: ', club1.name)
       club1.seasonData.wins++
       club1.seasonData.home_wins++
 
@@ -64,7 +59,7 @@ const updateSeasonData = (club1, club2, { match }) => {
 
       club1.seasonData.points += 3
       club1.seasonData.home_points += 3
-      console.log(club1.seasonData)
+      club1.seasonData.form.push('W')
       //Club2 update [LOOSER]
       club2.seasonData.losses++
       club2.seasonData.away_losses++
@@ -77,6 +72,7 @@ const updateSeasonData = (club1, club2, { match }) => {
 
       club2.seasonData.goals_difference =
          club2.seasonData.goals_scored - club2.seasonData.goals_conceded
+      club2.seasonData.form.push('L')
    }
    //Club2 won the match
    if (match[2] > match[1]) {
@@ -96,7 +92,7 @@ const updateSeasonData = (club1, club2, { match }) => {
 
       club2.seasonData.points += 3
       club2.seasonData.away_points += 3
-
+      club2.seasonData.form.push('W')
       //Club1 update [LOOSER]
 
       club1.seasonData.losses++
@@ -110,6 +106,8 @@ const updateSeasonData = (club1, club2, { match }) => {
 
       club1.seasonData.goals_difference =
          club1.seasonData.goals_scored - club1.seasonData.goals_conceded
+
+      club1.seasonData.form.push('L')
    }
    // TIE
    if (match[1] === match[2]) {
@@ -129,6 +127,7 @@ const updateSeasonData = (club1, club2, { match }) => {
 
       club2.seasonData.points += 1
       club2.seasonData.away_points += 1
+      club2.seasonData.form.push('D')
 
       //Club1 update [TIE]
 
@@ -144,7 +143,8 @@ const updateSeasonData = (club1, club2, { match }) => {
       club1.seasonData.goals_difference =
          club1.seasonData.goals_scored - club1.seasonData.goals_conceded
 
-      club2.seasonData.points += 1
-      club2.seasonData.home_points += 1
+      club1.seasonData.points += 1
+      club1.seasonData.home_points += 1
+      club1.seasonData.form.push('D')
    }
 }

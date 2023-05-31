@@ -1,3 +1,5 @@
+import { createForm, limitedStack } from '../../helpers/standings/limitedStack'
+
 export const ClubStatsTemplate = {
    games_played: 0,
    home_games_played: 0,
@@ -22,5 +24,5 @@ export const ClubStatsTemplate = {
    home_points: 0,
    away_points: 0,
    next_fixture: '(H/A)',
-   form: ['-', '-', '-', '-', '-'],
+   form: createForm(),
 }

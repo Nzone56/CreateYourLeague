@@ -13,7 +13,7 @@ export const createRows = (teams) => {
          team.seasonData.goals_conceded,
          team.seasonData.goals_difference,
          team.seasonData.points,
-         team.seasonData.form,
+         team.seasonData.form.stack,
          team.seasonData.next_fixture
       )
    })
