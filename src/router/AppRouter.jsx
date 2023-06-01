@@ -12,6 +12,7 @@ import { useContext } from 'react'
 import { MatchWeek } from '../components/schedule/MatchWeek'
 import { Schedule } from '@mui/icons-material'
 import { ClubInfo } from '../components/clubs/ClubInfo'
+import { ClubOverview } from '../components/clubs/ClubOverview'
 
 export const AppRouter = () => {
    const { league } = useContext(LeagueContext)
@@ -26,7 +27,12 @@ export const AppRouter = () => {
          <Route path="/season/standings" element={<StandingsPage />} />
          <Route path="/season/league" element={<LeaguePage />} />
          <Route path="/season/clubs" element={<ClubsPage />} />
-         <Route path="/season/clubs/:name" element={<ClubInfo />} />
+         <Route path="/season/clubs/:name" element={<ClubInfo />}>
+            <Route
+               path="/season/clubs/:name/overview"
+               element={<ClubOverview />}
+            />
+         </Route>
          <Route path="/welcome" element={<LandingPage />} />
          <Route path="/season/schedule" element={<SchedulePage />}>
             <Route path="/season/schedule/" element={<Schedule />} />

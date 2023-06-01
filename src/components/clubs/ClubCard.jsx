@@ -6,7 +6,7 @@ export const ClubCard = ({ club }) => {
    return (
       <ListItem
          component={Link}
-         to={`/season/clubs/${club.name}`}
+         to={`/season/clubs/${club.name.toLowerCase()}`}
          sx={{
             position: 'relative',
             backgroundColor: club.bg_color,
@@ -17,6 +17,7 @@ export const ClubCard = ({ club }) => {
             display: 'block',
             overflow: 'hidden',
             cursor: 'pointer',
+            boxShadow: '0px 0px 5px 5px rgb(0 0 0 / 10%)',
             '&: hover img': {
                transform: 'scale(1.1)',
             },
@@ -25,7 +26,7 @@ export const ClubCard = ({ club }) => {
          <Box sx={{ height: '50%', width: '100%' }}>
             <img
                src={`../../../src/assets/images/PremierLeague/${club.name}/stadiumSmall.jpg`}
-               alt={club.short_name}
+               alt={`${club.short_name} stadium `}
                width="100%"
                height="100%"
                key={club.id}
