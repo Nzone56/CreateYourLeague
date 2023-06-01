@@ -1,11 +1,10 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
-import { Box, Grid, List } from '@mui/material'
+import { Box, List } from '@mui/material'
 import { ClubCard } from './ClubCard'
 
 export const Clubs = () => {
    const { league } = useContext(LeagueContext)
-   const [selectedClub, setSelectedClub] = useState(league.clubs[0])
    return (
       <Box
          sx={{
@@ -29,11 +28,7 @@ export const Clubs = () => {
             }}
          >
             {league.clubs.map((club) => (
-               <ClubCard
-                  club={club}
-                  setSelectedClub={setSelectedClub}
-                  key={club.id}
-               />
+               <ClubCard club={club} key={club.id} />
             ))}
          </List>
       </Box>
