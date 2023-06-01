@@ -27,15 +27,15 @@ const searchResults = (schedules, teams) => {
       for (let j = 0; j < 10; j++) {
          // Match was played
          if (schedules[i][j][1] !== '-' && schedules[i][j][2] !== '-') {
-            club1 = teams.filter((team) => {
+            club1 = teams.find((team) => {
                return team.code === schedules[i][j][0]
             }) // Get club 1
-            club2 = teams.filter((team) => {
+            club2 = teams.find((team) => {
                return team.code === schedules[i][j][3]
             }) // Get club 2
             updateSeasonData(
-               club1[0],
-               club2[0],
+               club1,
+               club2,
                { match: schedules[i][j] },
                schedules,
                teams

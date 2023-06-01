@@ -1,4 +1,5 @@
 const getNextFixture = (club, matchweek, schedules) => {
+   // TODO: CHANGE THE LOGIC TO SEARCH THE NEXT NOT PLAYED MATCH INSTEAD OF COUNTING MATCHSPLAYED
    if (!schedules) return null
 
    const matches = schedules[matchweek]
@@ -20,9 +21,9 @@ export const getLogoNextFixture = (club, schedules, teams) => {
       schedules
    )
 
-   const nextFixture = teams.filter((club) => {
+   const nextFixture = teams.find((club) => {
       return club.code === nextCode
    })
 
-   return nextFixture[0]?.name
+   return nextFixture?.name
 }

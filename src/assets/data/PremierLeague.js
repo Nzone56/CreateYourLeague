@@ -28,6 +28,8 @@ export const PremierLeagueData = {
          capacity: 60260,
          manager: 'Unai Emery',
          city: 'London',
+         bg_color: '#fe0002',
+         text_color: '#FFFFFF',
          position: 1,
       },
       {
@@ -39,6 +41,8 @@ export const PremierLeagueData = {
          capacity: 42790,
          manager: 'Unai Emery',
          city: 'Birmingham',
+         bg_color: '#480025',
+         text_color: '#FFFFFF',
          position: 2,
       },
       {
@@ -50,6 +54,8 @@ export const PremierLeagueData = {
          capacity: 11329,
          manager: 'Gary O Neil',
          city: 'Bournemouth',
+         bg_color: '#e62333',
+         text_color: '#FFFFFF',
          position: 3,
       },
       {
@@ -61,6 +67,8 @@ export const PremierLeagueData = {
          capacity: 17250,
          manager: 'Thomas Frank',
          city: 'London',
+         bg_color: '#c61d23',
+         text_color: '#FFFFFF',
          position: 4,
       },
       {
@@ -72,6 +80,8 @@ export const PremierLeagueData = {
          capacity: 30750,
          manager: 'Roberto De Zerbi',
          city: 'Falmer',
+         bg_color: '#0054a6',
+         text_color: '#FFFFFF',
          position: 5,
       },
       {
@@ -83,6 +93,8 @@ export const PremierLeagueData = {
          capacity: 41631,
          manager: 'Frank Lampard',
          city: 'London',
+         bg_color: '#0a4595',
+         text_color: '#FFFFFF',
          position: 6,
       },
       {
@@ -95,6 +107,8 @@ export const PremierLeagueData = {
          manager: 'Roy Hodgson',
          manager_nationality: 'England',
          city: 'London',
+         bg_color: '#eb302e',
+         text_color: '#FFFFFF',
          position: 7,
       },
       {
@@ -106,6 +120,8 @@ export const PremierLeagueData = {
          capacity: 39572,
          manager: 'Sean Dyche',
          city: 'Liverpool',
+         bg_color: '#00369c',
+         text_color: '#FFFFFF',
          position: 8,
       },
       {
@@ -117,6 +133,8 @@ export const PremierLeagueData = {
          capacity: 25700,
          manager: 'Marco Silva',
          city: 'London',
+         bg_color: '#f5f5f5',
+         text_color: '#333333',
          position: 9,
       },
       {
@@ -128,6 +146,8 @@ export const PremierLeagueData = {
          capacity: 37890,
          manager: 'Sam Allardyce',
          city: 'Leeds',
+         bg_color: '#f5f5f5',
+         text_color: '#333333',
          position: 10,
       },
       {
@@ -139,6 +159,8 @@ export const PremierLeagueData = {
          capacity: 32273,
          manager: 'Dean Smith',
          city: 'Leicester',
+         bg_color: '#273e8a',
+         text_color: '#FFFFFF',
          position: 11,
       },
       {
@@ -150,6 +172,8 @@ export const PremierLeagueData = {
          capacity: 53394,
          manager: 'Jürgen Klopp',
          city: 'Liverpool',
+         bg_color: '#e31b23',
+         text_color: '#FFFFFF',
          position: 12,
       },
       {
@@ -161,6 +185,8 @@ export const PremierLeagueData = {
          capacity: 55017,
          manager: 'Josep Guardiola',
          city: 'Manchester',
+         bg_color: '#6caee0',
+         text_color: '#333333',
          position: 13,
       },
       {
@@ -173,6 +199,8 @@ export const PremierLeagueData = {
          manager: 'Erik Ten Hag',
          manager_nationality: 'Portugal',
          city: 'Manchester',
+         bg_color: '#d81920',
+         text_color: '#FFFFFF',
          position: 14,
       },
       {
@@ -185,6 +213,8 @@ export const PremierLeagueData = {
          manager: 'Eddie Howe',
          manager_nationality: 'Spain',
          city: 'Newcastle',
+         bg_color: '#383838',
+         text_color: '#FFFFFF',
          position: 15,
       },
       {
@@ -196,6 +226,8 @@ export const PremierLeagueData = {
          capacity: 30445,
          manager: 'Steve Cooper',
          city: 'Nottingham',
+         bg_color: '#eb0024',
+         text_color: '#FFFFFF',
          position: 16,
       },
       {
@@ -207,6 +239,8 @@ export const PremierLeagueData = {
          capacity: 32384,
          manager: 'Rubén Sellés',
          city: 'Southampton',
+         bg_color: '#d71920',
+         text_color: '#FFFFFF',
          position: 17,
       },
       {
@@ -218,6 +252,8 @@ export const PremierLeagueData = {
          capacity: 62062,
          manager: 'Ryan Mason',
          city: 'London',
+         bg_color: '#f5f5f5',
+         text_color: '#333333',
          position: 18,
       },
       {
@@ -229,6 +265,8 @@ export const PremierLeagueData = {
          capacity: 60000,
          manager: 'David Moyes',
          city: 'London',
+         bg_color: '#7d2c3b',
+         text_color: '#FFFFFF',
          position: 19,
       },
       {
@@ -240,6 +278,8 @@ export const PremierLeagueData = {
          capacity: 31700,
          manager: 'Julen Lopetegui',
          city: 'Wolverhampton',
+         bg_color: '#f9a01b',
+         text_color: '#333333',
          position: 20,
       },
    ],
