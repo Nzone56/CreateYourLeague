@@ -8,11 +8,15 @@ import { ClubOverview } from './ClubOverview'
 import { ClubSquad } from './ClubSquad'
 import { ClubStats } from './ClubStats'
 import { ClubSchedule } from './ClubSchedule'
+import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
+import { getUpdatedTeams } from '../../helpers/standings/getUpdatedTeams'
 
 export const ClubInfo = () => {
    const { league } = useContext(LeagueContext)
+   const { schedules } = useContext(ScheduleContext)
    const { name } = useParams()
-   const club = league.clubs.find((club) => {
+   const updatedClubs = getUpdatedTeams(league.clubs, schedules)
+   const club = updatedClubs.find((club) => {
       return club.name.toLowerCase() === name
    })
 

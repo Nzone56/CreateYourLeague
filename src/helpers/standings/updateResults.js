@@ -58,6 +58,7 @@ const updateSeasonData = (club1, club2, { match }, schedules, teams) => {
 
    //Club1 won the match
    if (match[1] > match[2]) {
+      console.log('uwu?')
       //Club1 update [WINNER]
       club1.seasonData.wins++
       club1.seasonData.home_wins++
@@ -87,6 +88,10 @@ const updateSeasonData = (club1, club2, { match }, schedules, teams) => {
       club2.seasonData.goals_difference =
          club2.seasonData.goals_scored - club2.seasonData.goals_conceded
       club2.seasonData.form.push('L')
+
+      if (match[2] === 0) {
+         club1.seasonData.clean_sheet++
+      }
    }
    //Club2 won the match
    if (match[2] > match[1]) {
@@ -121,6 +126,10 @@ const updateSeasonData = (club1, club2, { match }, schedules, teams) => {
          club1.seasonData.goals_scored - club1.seasonData.goals_conceded
 
       club1.seasonData.form.push('L')
+
+      if (match[1] === 0) {
+         club2.seasonData.clean_sheet++
+      }
    }
    // TIE
    if (match[1] === match[2]) {
@@ -158,5 +167,12 @@ const updateSeasonData = (club1, club2, { match }, schedules, teams) => {
       club1.seasonData.points += 1
       club1.seasonData.home_points += 1
       club1.seasonData.form.push('D')
+
+      if (match[2] === 0) {
+         club1.seasonData.clean_sheet++
+      }
+      if (match[1] === 0) {
+         club2.seasonData.clean_sheet++
+      }
    }
 }

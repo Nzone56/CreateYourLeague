@@ -20,6 +20,7 @@ export const ClubStatsTemplate = {
    home_goals_conceded: 0,
    away_goals_conceded: 0,
    goals_difference: 0,
+   clean_sheets: 0,
    points: 0,
    home_points: 0,
    away_points: 0,

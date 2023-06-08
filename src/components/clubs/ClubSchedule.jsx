@@ -9,7 +9,6 @@ export const ClubSchedule = ({ club, isPlayed }) => {
    const { schedules } = useContext(ScheduleContext)
    const { league } = useContext(LeagueContext)
    const clubSchedules = getClubSchedules(schedules, club, isPlayed)
-   console.log(clubSchedules)
    return (
       <Typography
          component="ul"
@@ -25,6 +24,7 @@ export const ClubSchedule = ({ club, isPlayed }) => {
                      flexDirection: 'column',
                   }}
                   mx={16}
+                  key={data.match[0] + data.match[3]}
                >
                   <Typography
                      sx={{ fontWeight: 'bold', fontSize: '22px' }}
