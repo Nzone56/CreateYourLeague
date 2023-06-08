@@ -5,14 +5,7 @@ import { Box } from '@mui/material'
 
 export const ClubsPage = () => {
    return (
-      <Box
-         style={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100vh',
-            width: '100%',
-         }}
-      >
+      <Box>
          <Header />
          <Clubs />
          <Footer />
