@@ -3,24 +3,13 @@ import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
 import { Box, Typography } from '@mui/material'
 import { Match } from '../schedule/Match'
 import { LeagueContext } from '../../context/league/LeagueProvider'
+import { getClubSchedules } from '../../helpers/schedules/clubSchedules'
 
-export const ClubFixtures = ({ club }) => {
+export const ClubSchedule = ({ club, isPlayed }) => {
    const { schedules } = useContext(ScheduleContext)
    const { league } = useContext(LeagueContext)
-   const clubSchedules = schedules.map((matchweek, matchweekIndex) => {
-      const foundMatch = matchweek.reduce((found, match, matchIndex) => {
-         if (!found && (match[0] === club.code || match[3] === club.code)) {
-            return {
-               match,
-               matchweekIndex,
-               matchIndex,
-            }
-         }
-         return found
-      }, null)
-
-      return foundMatch
-   })
+   const clubSchedules = getClubSchedules(schedules, club, isPlayed)
+   console.log(clubSchedules)
    return (
       <Typography
          component="ul"

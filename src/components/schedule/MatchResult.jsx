@@ -22,9 +22,9 @@ export const MatchResult = ({
 
       if (isValidInput) {
          if (inputId === 'HomeTeam') {
-            setResult([inputValue, result[1]])
+            setResult([inputValue || '-', result[1]])
          } else if (inputId === 'AwayTeam') {
-            setResult([result[0], inputValue])
+            setResult([result[0], inputValue || '-'])
          }
       }
    }
