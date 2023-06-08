@@ -9,15 +9,15 @@ export const MatchWeek = () => {
    const { league } = useContext(LeagueContext)
    const { schedules } = useContext(ScheduleContext)
    const theme = league.theme
-   const { id } = useParams()
-   const schedule = schedules[id - 1]
+   const { id: matchweekId } = useParams()
+   const schedule = schedules[matchweekId - 1]
 
    const addPoints = () => {
       league.clubs[1].seasonData.points++
       // league.clubs[0].position = 21
    }
 
-   return !id ? (
+   return !matchweekId ? (
       <Box
          sx={{
             display: 'flex',
@@ -57,7 +57,7 @@ export const MatchWeek = () => {
                backgroundColor: theme.secondary,
             }}
          >
-            MatchWeek #{id}
+            MatchWeek #{matchweekId}
          </Typography>
          <Typography
             component="ul"
@@ -69,7 +69,8 @@ export const MatchWeek = () => {
                      match={match}
                      theme={theme}
                      key={match[0] + match[3]}
-                     id={index}
+                     matchId={index}
+                     matchweekId={matchweekId - 1}
                   />
                )
             })}

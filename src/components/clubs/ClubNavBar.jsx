@@ -5,7 +5,7 @@ import { LeagueContext } from '../../context/league/LeagueProvider'
 
 export const ClubNavBar = ({ club }) => {
    const { league } = useContext(LeagueContext)
-   const [activeTab, setActiveTab] = useState(location.pathname)
+   const [activeTab, setActiveTab] = useState(`${location.pathname}`)
    const styleTab = {
       color: '#6c6c6c',
       backgroundColor: '#ebebe6',
@@ -28,53 +28,48 @@ export const ClubNavBar = ({ club }) => {
          value={activeTab}
          onChange={handleTabChange}
          centered
-         sx={{ marginTop: '-50px' }}
+         sx={{ marginTop: '-48px' }}
       >
          <Tab
             component={Link}
             to={`/season/clubs/${club.name.toLowerCase()}/overview`}
+            value={`/season/clubs/${club.name.toLowerCase()}/overview`}
             label="Overview"
             sx={styleTab}
             key="overview"
-         >
-            Overwiew
-         </Tab>
+         />
          <Tab
             component={Link}
-            to="/season/clubs/overview"
+            to={`/season/clubs/${club.name.toLowerCase()}/squad`}
+            value={`/season/clubs/${club.name.toLowerCase()}/squad`}
             label="Squad"
             sx={styleTab}
             key="squad"
-         >
-            Squad
-         </Tab>
+         />
          <Tab
             component={Link}
-            to="/season/clubs/overview"
+            to={`/season/clubs/${club.name.toLowerCase()}/fixtures`}
+            value={`/season/clubs/${club.name.toLowerCase()}/fixtures`}
             label="Fixtures"
             sx={styleTab}
             key="fixtures"
-         >
-            Fixtures
-         </Tab>
+         />
          <Tab
             component={Link}
-            to="/season/clubs/overview"
+            to={`/season/clubs/${club.name.toLowerCase()}/results`}
+            value={`/season/clubs/${club.name.toLowerCase()}/results`}
             label="Results"
             sx={styleTab}
             key="results"
-         >
-            Results
-         </Tab>
+         />
          <Tab
             component={Link}
-            to="/season/clubs/overview"
+            to={`/season/clubs/${club.name.toLowerCase()}/stats`}
+            value={`/season/clubs/${club.name.toLowerCase()}/stats`}
             label="Stats"
             sx={styleTab}
             key="stats"
-         >
-            Stats
-         </Tab>
+         />
       </Tabs>
    )
 }

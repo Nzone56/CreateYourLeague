@@ -1,15 +1,18 @@
 import { Box, Input } from '@mui/material'
 import { useContext, useEffect } from 'react'
 import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
-import { useParams } from 'react-router-dom'
 
-export const MatchResult = ({ theme, result, setResult, matchId }) => {
+export const MatchResult = ({
+   theme,
+   result,
+   setResult,
+   matchId,
+   matchweekId,
+}) => {
    const { updateResult } = useContext(ScheduleContext)
-   const { id } = useParams()
-   const matchweek = id - 1
 
    useEffect(() => {
-      updateResult(matchweek, matchId, result)
+      updateResult(matchweekId, matchId, result)
    }, [result])
 
    const handleInputChange = ({ target }) => {

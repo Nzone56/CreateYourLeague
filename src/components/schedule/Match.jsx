@@ -1,11 +1,11 @@
 import { Box, Button, Grid } from '@mui/material'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { Team } from './Team'
 import { Stadium } from './Stadium'
 import { MatchResult } from './MatchResult'
 
-export const Match = ({ match, theme, id }) => {
+export const Match = ({ match, theme, matchId, matchweekId }) => {
    const { league } = useContext(LeagueContext)
    const [result, setResult] = useState([match[1], match[2]])
    const club1 = league.clubs.find((club) => club.code === match[0])
@@ -15,7 +15,8 @@ export const Match = ({ match, theme, id }) => {
       <li>
          <Grid
             sx={{
-               borderBottom: '2px solid #eee',
+               borderBottom: '1px solid #eee',
+               borderTop: '1px solid #eee',
                display: 'flex',
                flexDirection: 'row',
                alignItems: 'center',
@@ -45,7 +46,8 @@ export const Match = ({ match, theme, id }) => {
                   theme={theme}
                   result={result}
                   setResult={setResult}
-                  matchId={id}
+                  matchId={matchId}
+                  matchweekId={matchweekId}
                />
                <Team club={club2} reverseOrder={false} />
             </Box>

@@ -16,11 +16,11 @@ const ScheduleProvider = ({ children }) => {
       }
    }, [league])
 
-   const updateResult = (matchweek, matchId, result) => {
+   const updateResult = (matchweekId, matchId, result) => {
       setSchedules((prevSchedules) => {
          const updatedSchedules = [...prevSchedules]
-         updatedSchedules[matchweek][matchId][1] = result[0]
-         updatedSchedules[matchweek][matchId][2] = result[1]
+         updatedSchedules[matchweekId][matchId][1] = result[0]
+         updatedSchedules[matchweekId][matchId][2] = result[1]
          return updatedSchedules
       })
    }

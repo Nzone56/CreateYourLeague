@@ -7,10 +7,6 @@ import ShareIcon from '@mui/icons-material/Share'
 import { SocialMediaIcon } from './SocialMediaIcon'
 import StadiumIcon from '@mui/icons-material/Stadium'
 export const ClubBanner = ({ club }) => {
-   const navigate = useNavigate()
-   const onNavigateBack = () => {
-      navigate(-1)
-   }
    return (
       <Box
          sx={{
@@ -26,11 +22,12 @@ export const ClubBanner = ({ club }) => {
                alignItems: 'center',
             }}
          >
-            <Box component={Link} sx={{ marginLeft: '50px' }}>
-               <WestIcon
-                  sx={{ color: club.text_color, fontSize: '40px' }}
-                  onClick={() => onNavigateBack()}
-               />
+            <Box
+               component={Link}
+               to="/season/clubs/"
+               sx={{ marginLeft: '50px' }}
+            >
+               <WestIcon sx={{ color: club.text_color, fontSize: '40px' }} />
             </Box>
             <Box
                m={2}
