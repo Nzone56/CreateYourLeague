@@ -23,7 +23,7 @@ export const ClubStats = ({ club }) => {
             flexDirection: 'column',
          }}
       >
-         <Box m={2} sx={{ display: 'flex' }}>
+         <Box m={12} sx={{ display: 'flex' }}>
             {statBoxes.map((box, index) => (
                <ClubStatBox
                   key={index}
@@ -34,9 +34,10 @@ export const ClubStats = ({ club }) => {
                />
             ))}
          </Box>
-         <Box sx={{ display: 'flex' }}>
-            <ClubDetailedStats />
-            <ClubDetailedStats />
+         <Box m={4} sx={{ display: 'flex' }}>
+            <ClubDetailedStats club={club} spec={'Home'} />
+            <ClubDetailedStats club={club} spec={'General'} />
+            <ClubDetailedStats club={club} spec={'Away'} />
          </Box>
       </Box>
    )
