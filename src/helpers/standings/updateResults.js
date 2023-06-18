@@ -4,6 +4,7 @@ import { createForm } from './limitedStack'
 
 export const updateResults = (schedules, teams) => {
    teams = resetSeasonData(teams, schedules)
+   console.log(teams)
    searchResults(schedules, teams)
    return teams
 }
@@ -13,7 +14,7 @@ const resetSeasonData = (teams, schedules) => {
       return {
          ...team,
          seasonData: {
-            ...ClubStatsTemplate,
+            ...JSON.parse(JSON.stringify(ClubStatsTemplate)),
             form: createForm(),
             next_fixture: getLogoNextFixture(team, schedules, teams),
          },

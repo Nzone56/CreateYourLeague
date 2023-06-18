@@ -12,7 +12,6 @@ import { useContext } from 'react'
 import { MatchWeek } from '../components/schedule/MatchWeek'
 import { Schedule } from '@mui/icons-material'
 import { ClubInfo } from '../components/clubs/ClubInfo'
-import { ClubSquad } from '../components/clubs/ClubSquad'
 
 export const AppRouter = () => {
    const { league } = useContext(LeagueContext)

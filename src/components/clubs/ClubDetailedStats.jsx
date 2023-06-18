@@ -7,8 +7,20 @@ export const ClubDetailedStats = ({ club, spec }) => {
       Away: club.seasonData.away,
       General: club.seasonData,
    }
-
    const stats = data[spec] || {}
+   const GoalsScoredPerMatch =
+      stats.goals_scored !== 0 && stats.games_played !== 0
+         ? (stats.goals_scored / stats.games_played) % 1 === 0
+            ? (stats.goals_scored / stats.games_played).toFixed(0)
+            : (stats.goals_scored / stats.games_played).toFixed(2)
+         : 0
+
+   const GoalsConcededPerMatch =
+      stats.goals_conceded !== 0 && stats.games_played !== 0
+         ? (stats.goals_conceded / stats.games_played) % 1 === 0
+            ? (stats.goals_conceded / stats.games_played).toFixed(0)
+            : (stats.goals_conceded / stats.games_played).toFixed(2)
+         : 0
    return (
       <List
          sx={{
@@ -33,12 +45,12 @@ export const ClubDetailedStats = ({ club, spec }) => {
          <ClubStatItem label="Goals Scored" value={stats.goals_scored} />
          <ClubStatItem
             label="Goals Scored per Match"
-            value={stats.goals_scored / stats.games_played || 0}
+            value={GoalsScoredPerMatch}
          />
          <ClubStatItem label="Goals Conceded" value={stats.goals_conceded} />
          <ClubStatItem
             label="Goals Conceded per Match"
-            value={stats.goals_conceded / stats.games_played || 0}
+            value={GoalsConcededPerMatch}
          />
          <ClubStatItem label="Points" value={stats.points} />
       </List>

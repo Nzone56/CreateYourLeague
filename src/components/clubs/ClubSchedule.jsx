@@ -3,12 +3,13 @@ import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
 import { Box, Typography } from '@mui/material'
 import { Match } from '../schedule/Match'
 import { LeagueContext } from '../../context/league/LeagueProvider'
-import { getClubSchedules } from '../../helpers/schedules/clubSchedules'
+import { getClubSchedules } from '../../helpers/schedules/getClubSchedules'
 
 export const ClubSchedule = ({ club, isPlayed }) => {
    const { schedules } = useContext(ScheduleContext)
    const { league } = useContext(LeagueContext)
    const clubSchedules = getClubSchedules(schedules, club, isPlayed)
+
    return (
       <Typography
          component="ul"
