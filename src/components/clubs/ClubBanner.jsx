@@ -7,6 +7,7 @@ import ShareIcon from '@mui/icons-material/Share'
 import { SocialMediaIcon } from './SocialMediaIcon'
 import StadiumIcon from '@mui/icons-material/Stadium'
 export const ClubBanner = ({ club }) => {
+   console.log(club)
    return (
       <Box
          sx={{

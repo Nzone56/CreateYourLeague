@@ -4,7 +4,6 @@ import { createForm } from './limitedStack'
 
 export const updateResults = (schedules, teams) => {
    teams = resetSeasonData(teams, schedules)
-   console.log(teams)
    searchResults(schedules, teams)
    return teams
 }

@@ -27,7 +27,7 @@ export const AppRouter = () => {
          <Route path="/season/home" element={<HomePage />} />
          <Route path="/season/standings" element={<StandingsPage />} />
          <Route path="/season/league" element={<LeaguePage />} />
-         <Route path="/season/clubs" element={<ClubsPage />} />
+         <Route path="/season/clubs/*" element={<ClubsPage />} />
          <Route path="/season/clubs/:name/*" element={<ClubInfo />} />
          <Route path="/season/schedule" element={<SchedulePage />}>
             <Route path="/season/schedule/" element={<Schedule />} />

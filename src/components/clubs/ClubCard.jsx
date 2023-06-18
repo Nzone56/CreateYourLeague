@@ -6,7 +6,7 @@ export const ClubCard = ({ club }) => {
    return (
       <ListItem
          component={Link}
-         to={`/season/clubs/${club.name.toLowerCase()}/overview`}
+         to={`/season/clubs/${club.name.toLowerCase()}`}
          sx={{
             position: 'relative',
             backgroundColor: club.bg_color,
