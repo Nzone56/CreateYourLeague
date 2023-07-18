@@ -7,7 +7,6 @@ import ShareIcon from '@mui/icons-material/Share'
 import { SocialMediaIcon } from './SocialMediaIcon'
 import StadiumIcon from '@mui/icons-material/Stadium'
 export const ClubBanner = ({ club }) => {
-   console.log(club)
    return (
       <Box
          sx={{
@@ -25,8 +24,8 @@ export const ClubBanner = ({ club }) => {
          >
             <Box
                component={Link}
-               to="/season/clubs/"
-               sx={{ marginLeft: '50px' }}
+               to="/season/clubs"
+               sx={{ marginLeft: '30px' }}
             >
                <WestIcon sx={{ color: club.text_color, fontSize: '40px' }} />
             </Box>
@@ -145,14 +144,13 @@ export const ClubBanner = ({ club }) => {
                </Box>
             </Box>
          </Box>
-         <Box sx={{ height: '100%', width: '50%' }}>
+         <Box sx={{ height: '100%', width: '55%' }}>
             <img
                src={`../../../src/assets/images/PremierLeague/${club.name}/stadiumBig.jpg`}
                alt={`${club.short_name} stadium `}
                width="100%"
                height="100%"
                key={club.id}
-               style={{ objectFit: 'fill', transition: 'transform 2s' }}
             />
          </Box>
       </Box>

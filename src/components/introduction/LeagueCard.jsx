@@ -23,21 +23,16 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
    }
 
    return (
-      <Grid
-         m={1}
-         sx={{
-            flexDirection: 'row',
-            display: 'flex',
-         }}
-      >
+      <Grid m={1}>
          <Card
             sx={{
-               height: 700,
+               width: 230,
+               height: 450,
                display: 'flex',
                justifyContent: 'center',
                alignItems: 'center',
                backgroundColor: isHovered
-                  ? `${league.theme.secondary}`
+                  ? `${league.theme.tertiary}`
                   : `${league.theme.primary}`,
             }}
          >
@@ -45,6 +40,8 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                sx={{
                   width: '100%',
                   height: '100%',
+                  transition: 'transform 0.5s ease-in-out',
+                  transform: isHovered ? 'scale(1.05)' : 'scale(1)',
                }}
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
@@ -52,6 +49,7 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                <Box
                   sx={{
                      margin: '10%',
+                     height: 'auto',
                   }}
                >
                   {!isHovered ? (
@@ -62,42 +60,50 @@ export const LeagueCard = ({ league, handleSelectLeague }) => {
                            width: '100%',
                            objectFit: 'contain',
                         }}
-                        image={`../src/assets/images/leagues/${league.logo_url}`}
+                        image={`/assets/images/leagues/${league.logo_url}`}
                         title="Logo"
                      />
                   ) : (
                      <Box
                         sx={{
-                           margin: '10%',
                            display: 'flex',
                            alignItems: 'center',
-                           justifyContent: 'center',
-                           flexDirection: 'row',
-                           backgroundImage: `../src/assets/images/leagues/${league.cardBg_url}`,
-                           backgroundSize: 'cover',
-                           backgroundPosition: 'center',
+                           justifyContent: 'space-between',
+                           flexDirection: 'column',
                         }}
                      >
-                        <CardMedia
-                           component="img"
-                           sx={{
-                              height: 'auto',
-                              width: isHovered ? '25%' : '100%',
-                              objectFit: 'contain',
-                           }}
-                           image={`../src/assets/images/leagues/${league.logo_url}`}
-                           title="Logo"
-                        />
-                        <CardContent>
-                           <Typography sx={{ color: league.theme.Other2 }}>
-                              {league.competition}
-                           </Typography>
-                        </CardContent>
-                        <CardActions>
-                           <PlayCircleFilled
-                              onClick={() => handleSelectLeague(league.name)}
+                        <picture>
+                           <img
+                              style={{
+                                 height: '240px',
+                                 width: '200px',
+                                 objectFit: 'center',
+                              }}
+                              src={`/assets/images/leagues/${league.logo_url}`}
+                              atl="League Logo"
                            />
-                        </CardActions>
+                        </picture>
+
+                        <CardContent
+                           sx={{ display: 'flex', alignItems: 'center' }}
+                        >
+                           <Typography
+                              component="h4"
+                              variant="body1"
+                              sx={{
+                                 color: league.theme.secondary,
+                                 fontWeight: 'bold',
+                                 padding: '8px',
+                              }}
+                           >
+                              SELECT
+                           </Typography>
+                           <CardActions>
+                              <PlayCircleFilled
+                                 onClick={() => handleSelectLeague(league.name)}
+                              />
+                           </CardActions>
+                        </CardContent>
                      </Box>
                   )}
                </Box>

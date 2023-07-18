@@ -1,11 +1,8 @@
 import { Typography, Box } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2'
 import { useContext } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { useNavigate } from 'react-router-dom'
-import LeagueCards from './LeagueCards'
-import LandingPageBg from '../../assets/images/LandingPageBg.jpg'
-// import second from '../../assets/images/'
+import { LeagueCards } from './LeagueCards'
 
 export const Introduction = () => {
    const { selectLeague } = useContext(LeagueContext)
@@ -24,9 +21,9 @@ export const Introduction = () => {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
-            width: '100vw',
-            height: '100vh',
-            backgroundImage: `url(${LandingPageBg})`,
+            maxWidth: '100vw',
+            minHeight: '100vh',
+            backgroundImage: `url(../../src/assets/images/LandingBg.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
          }}
@@ -34,14 +31,8 @@ export const Introduction = () => {
          <Typography variant="h3" mb={4} sx={{ color: 'white' }}>
             SELECT YOUR LEAGUE
          </Typography>
-         <Grid
-            container
-            spacing={2}
-            justifyContent="center"
-            sx={{ width: '100%' }}
-         >
-            <LeagueCards handleSelectLeague={handleSelectLeague} />
-         </Grid>
+
+         <LeagueCards handleSelectLeague={handleSelectLeague} />
       </Box>
    )
 }

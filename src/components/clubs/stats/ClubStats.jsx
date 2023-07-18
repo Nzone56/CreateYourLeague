@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
-import { ClubStatBox } from './ClubStatBox'
 import { ClubDetailedStats } from './ClubDetailedStats'
+import { ClubStatBox } from './ClubStatBox'
 
 export const ClubStats = ({ club }) => {
    const statBoxes = [
