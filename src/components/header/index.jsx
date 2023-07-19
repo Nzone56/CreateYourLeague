@@ -26,7 +26,7 @@ export const Header = () => {
             <Toolbar>
                <CardMedia
                   component="img"
-                  src={`../src/assets/images/leagues/${league.logo_url}`}
+                  src={`/assets/images/leagues/${league.logo_url}`}
                   alt="League Logo"
                   height="50"
                   sx={{

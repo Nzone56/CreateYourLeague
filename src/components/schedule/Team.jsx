@@ -20,7 +20,7 @@ export const Team = ({ club, reverseOrder }) => {
                   {club.short_name}
                </Typography>
                <img
-                  src={`../../../src/assets/images/PremierLeague/${club.name}/logo.svg`}
+                  src={`/assets/images/PremierLeague/${club.name}/logo.svg`}
                   alt={club.short_name}
                   width="25"
                   height="25"
@@ -36,7 +36,7 @@ export const Team = ({ club, reverseOrder }) => {
                }}
             >
                <img
-                  src={`../../../src/assets/images/PremierLeague/${club.name}/logo.svg`}
+                  src={`/assets/images/PremierLeague/${club.name}/logo.svg`}
                   alt={club.short_name}
                   width="25"
                   height="25"

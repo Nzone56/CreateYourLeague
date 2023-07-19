@@ -18,16 +18,7 @@ export const LeagueTable = () => {
    }, [league.clubs])
 
    return (
-      <Box
-         sx={
-            {
-               //TODO: SELECT BACKGROUND IMAGE FOR STANDINGS TABLE
-               // backgroundImage:
-               //    'url(../../../src/assets/images/PremierLeague/PremierLeaguebg.png)',
-               // backgroundSize: 'cover',
-            }
-         }
-      >
+      <Box>
          <Box
             mt={10}
             mb={10}
@@ -57,7 +48,7 @@ export const LeagueTable = () => {
                <Box m={1}>
                   <CardMedia
                      component="img"
-                     src={`../src/assets/images/leagues/${league.logo_url}`}
+                     src={`/assets/images/leagues/${league.logo_url}`}
                      alt="League Logo"
                      height="50"
                      sx={{

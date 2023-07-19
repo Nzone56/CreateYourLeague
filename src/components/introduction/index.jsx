@@ -23,7 +23,7 @@ export const Introduction = () => {
             flexDirection: 'column',
             maxWidth: '100vw',
             minHeight: '100vh',
-            backgroundImage: `url(../../src/assets/images/LandingBg.jpg)`,
+            backgroundImage: `url(/assets/images/LandingBg.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
          }}

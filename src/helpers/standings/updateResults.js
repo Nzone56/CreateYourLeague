@@ -1,4 +1,4 @@
-import { ClubStatsTemplate } from '../../assets/data'
+import { ClubStatsTemplate } from '../../data'
 import { getLogoNextFixture } from './getNextFixture'
 import { createForm } from './limitedStack'
 

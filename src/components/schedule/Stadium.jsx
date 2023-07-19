@@ -11,7 +11,7 @@ export const Stadium = ({ club }) => {
          }}
       >
          <img
-            src={`../../../src/assets/images/stadium.png`}
+            src={`/assets/images/stadium.png`}
             alt={'Stadium-icon'}
             width="25"
             height="25"

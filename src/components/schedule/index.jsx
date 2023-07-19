@@ -42,14 +42,7 @@ export const Schedule = () => {
       setActiveTab(newValue)
    }
    return (
-      <Box
-      // TODO: SELECT BANNER IMAGE FOR SCHEDULE PAGE
-      //    sx={{
-      //       backgroundImage:
-      //          'url(../../../src/assets/images/PremierLeague/PremierLeaguebg.png)',
-      //       backgroundSize: 'cover',
-      //    }}
-      >
+      <Box>
          <Box
             margin={4}
             sx={{

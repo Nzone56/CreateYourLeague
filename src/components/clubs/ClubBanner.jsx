@@ -44,7 +44,7 @@ export const ClubBanner = ({ club }) => {
                }}
             >
                <img
-                  src={`../../../src/assets/images/PremierLeague/${club.name}/logo.svg`}
+                  src={`/assets/images/PremierLeague/${club.name}/logo.svg`}
                   alt={club.short_name}
                   width="135"
                   height="135"
@@ -146,7 +146,7 @@ export const ClubBanner = ({ club }) => {
          </Box>
          <Box sx={{ height: '100%', width: '55%' }}>
             <img
-               src={`../../../src/assets/images/PremierLeague/${club.name}/stadiumBig.jpg`}
+               src={`/assets/images/PremierLeague/${club.name}/stadiumBig.jpg`}
                alt={`${club.short_name} stadium `}
                width="100%"
                height="100%"

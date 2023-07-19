@@ -5,7 +5,7 @@ import {
    SerieAData,
    BundesligaData,
    Ligue1Data,
-} from '../../assets/data'
+} from '../../data'
 import { createContext, useState } from 'react'
 
 const LeagueContext = createContext()
