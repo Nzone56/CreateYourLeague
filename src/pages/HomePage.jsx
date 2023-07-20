@@ -1,18 +1,13 @@
 import { Box } from '@mui/material'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
+import { LeagueHome } from '../components/home'
 
 export const HomePage = () => {
    return (
-      <Box
-         style={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100vh',
-         }}
-      >
+      <Box>
          <Header />
-         <div> Home </div>
+         <LeagueHome />
          <Footer />
       </Box>
    )

@@ -4,6 +4,7 @@ import { LeagueContext } from '../../context/league/LeagueProvider'
 import { StandingsTable } from './StandingsTable'
 import { getUpdatedTeams } from '../../helpers/standings/getUpdatedTeams'
 import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
+import { createRows } from '../../helpers/standings/dataToTable'
 
 export const LeagueTable = () => {
    const { league } = useContext(LeagueContext)
@@ -34,42 +35,31 @@ export const LeagueTable = () => {
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-                  backgroundColor: league.theme.tertiary,
+                  backgroundColor: league.theme.secondary,
+                  color: league.theme.secondary,
                }}
             >
-               <Typography
-                  p={2}
-                  sx={{
-                     color: league.theme.Other2,
-                  }}
-               >
-                  PREMIER
-               </Typography>
                <Box m={1}>
-                  <CardMedia
-                     component="img"
+                  <img
                      src={`/assets/images/leagues/${league.logo_url}`}
                      alt="League Logo"
-                     height="50"
-                     sx={{
+                     style={{
                         maxWidth: '100%',
                         maxHeight: '100%',
                         objectFit: 'contain',
+                        height: '50px',
+                        width: '50px',
+                        padding: '0px 75px',
+                        filter:
+                           league.name === 'PremierLeague'
+                              ? 'invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(102%) contrast(101%)'
+                              : 'none',
                      }}
                   />
                </Box>
-
-               <Typography
-                  p={2}
-                  sx={{
-                     color: league.theme.Other2,
-                  }}
-               >
-                  LEAGUE
-               </Typography>
             </Box>
 
-            <StandingsTable teams={teams} />
+            <StandingsTable teams={teams} createRows={createRows} />
          </Box>
       </Box>
    )

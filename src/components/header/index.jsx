@@ -2,16 +2,16 @@ import { AppBar, Box, CardMedia, Tab, Tabs, Toolbar } from '@mui/material'
 import { useContext, useState } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { Link, useLocation } from 'react-router-dom'
+import { ImageAspectRatio } from '@mui/icons-material'
 
 export const Header = () => {
    const { league } = useContext(LeagueContext)
    const location = useLocation()
    const [activeTab, setActiveTab] = useState(location.pathname)
-
    const styleTab = {
-      color: league.theme.secondary,
+      color: league.theme.Other2,
       '&.Mui-selected': {
-         color: league.theme.Other2,
+         color: league.theme.primary,
       },
    }
    const handleTabChange = (event, newValue) => {
@@ -20,19 +20,23 @@ export const Header = () => {
    return (
       <>
          <AppBar
-            style={{ backgroundColor: league.theme.primary }}
+            style={{ backgroundColor: league.theme.secondary }}
             position="sticky"
          >
-            <Toolbar>
-               <CardMedia
-                  component="img"
+            <Toolbar sx={{ display: 'flex', justifyContent: 'center' }}>
+               <img
                   src={`/assets/images/leagues/${league.logo_url}`}
                   alt="League Logo"
-                  height="50"
-                  sx={{
+                  style={{
                      maxWidth: '100%',
                      maxHeight: '100%',
                      objectFit: 'contain',
+                     height: '50px',
+                     width: '50px',
+                     filter:
+                        league.name === 'PremierLeague'
+                           ? 'invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(102%) contrast(101%)'
+                           : 'none',
                   }}
                />
             </Toolbar>
@@ -42,9 +46,9 @@ export const Header = () => {
                value={activeTab}
                onChange={handleTabChange}
                sx={{
-                  backgroundColor: league.theme.primary,
+                  backgroundColor: league.theme.secondary,
                   '& .MuiTabs-indicator': {
-                     backgroundColor: league.theme.secondary,
+                     backgroundColor: league.theme.primary,
                   },
                }}
                centered

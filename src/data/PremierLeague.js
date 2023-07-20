@@ -8,6 +8,7 @@ export const PremierLeagueData = {
    season: '2022-23',
    starting_date: '6-August-2022',
    ending_date: '28-May-2023',
+   current_champion: 'Manchester City',
    total_matchdays: 38,
    total_matches: 380,
    number_of_participating_clubs: 20,
@@ -30,6 +31,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#fe0002',
          text_color: '#FFFFFF',
+         titles: 13,
+         subtitles: 10,
          position: 1,
       },
       {
@@ -43,6 +46,8 @@ export const PremierLeagueData = {
          city: 'Birmingham',
          bg_color: '#480025',
          text_color: '#FFFFFF',
+         titles: 7,
+         subtitles: 10,
          position: 2,
       },
       {
@@ -56,6 +61,8 @@ export const PremierLeagueData = {
          city: 'Bournemouth',
          bg_color: '#e62333',
          text_color: '#FFFFFF',
+         titles: 0,
+         subtitles: 0,
          position: 3,
       },
       {
@@ -69,6 +76,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#c61d23',
          text_color: '#FFFFFF',
+         titles: 0,
+         subtitles: 0,
          position: 4,
       },
       {
@@ -82,6 +91,8 @@ export const PremierLeagueData = {
          city: 'Falmer',
          bg_color: '#0054a6',
          text_color: '#FFFFFF',
+         titles: 0,
+         subtitles: 0,
          position: 5,
       },
       {
@@ -95,6 +106,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#0a4595',
          text_color: '#FFFFFF',
+         titles: 6,
+         subtitles: 5,
          position: 6,
       },
       {
@@ -109,6 +122,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#eb302e',
          text_color: '#FFFFFF',
+         titles: 0,
+         subtitles: 0,
          position: 7,
       },
       {
@@ -122,6 +137,8 @@ export const PremierLeagueData = {
          city: 'Liverpool',
          bg_color: '#00369c',
          text_color: '#FFFFFF',
+         titles: 9,
+         subtitles: 7,
          position: 8,
       },
       {
@@ -135,6 +152,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#f5f5f5',
          text_color: '#333333',
+         titles: 0,
+         subtitles: 0,
          position: 9,
       },
       {
@@ -148,6 +167,8 @@ export const PremierLeagueData = {
          city: 'Leeds',
          bg_color: '#f5f5f5',
          text_color: '#333333',
+         titles: 3,
+         subtitles: 5,
          position: 10,
       },
       {
@@ -161,6 +182,8 @@ export const PremierLeagueData = {
          city: 'Leicester',
          bg_color: '#273e8a',
          text_color: '#FFFFFF',
+         titles: 1,
+         subtitles: 1,
          position: 11,
       },
       {
@@ -174,6 +197,8 @@ export const PremierLeagueData = {
          city: 'Liverpool',
          bg_color: '#e31b23',
          text_color: '#FFFFFF',
+         titles: 19,
+         subtitles: 15,
          position: 12,
       },
       {
@@ -187,6 +212,8 @@ export const PremierLeagueData = {
          city: 'Manchester',
          bg_color: '#6caee0',
          text_color: '#333333',
+         titles: 8,
+         subtitles: 6,
          position: 13,
       },
       {
@@ -201,6 +228,8 @@ export const PremierLeagueData = {
          city: 'Manchester',
          bg_color: '#d81920',
          text_color: '#FFFFFF',
+         titles: 20,
+         subtitles: 17,
          position: 14,
       },
       {
@@ -215,6 +244,8 @@ export const PremierLeagueData = {
          city: 'Newcastle',
          bg_color: '#383838',
          text_color: '#FFFFFF',
+         titles: 4,
+         subtitles: 2,
          position: 15,
       },
       {
@@ -228,6 +259,8 @@ export const PremierLeagueData = {
          city: 'Nottingham',
          bg_color: '#eb0024',
          text_color: '#FFFFFF',
+         titles: 1,
+         subtitles: 2,
          position: 16,
       },
       {
@@ -241,6 +274,8 @@ export const PremierLeagueData = {
          city: 'Southampton',
          bg_color: '#d71920',
          text_color: '#FFFFFF',
+         titles: 0,
+         subtitles: 0,
          position: 17,
       },
       {
@@ -254,6 +289,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#f5f5f5',
          text_color: '#333333',
+         titles: 2,
+         subtitles: 5,
          position: 18,
       },
       {
@@ -267,6 +304,8 @@ export const PremierLeagueData = {
          city: 'London',
          bg_color: '#7d2c3b',
          text_color: '#FFFFFF',
+         titles: 0,
+         subtitles: 0,
          position: 19,
       },
       {
@@ -280,6 +319,8 @@ export const PremierLeagueData = {
          city: 'Wolverhampton',
          bg_color: '#f9a01b',
          text_color: '#333333',
+         titles: 3,
+         subtitles: 5,
          position: 20,
       },
    ],

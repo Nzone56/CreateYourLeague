@@ -3,7 +3,7 @@ import { TableCell, TableRow, tableCellClasses } from '@mui/material'
 
 export const StyledTableCell = styled(TableCell)(({ theme }) => ({
    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.tertiary,
+      backgroundColor: theme.secondary,
       color: theme.Other2,
    },
    [`&.${tableCellClasses.body}`]: {

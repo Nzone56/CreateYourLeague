@@ -13,12 +13,13 @@ import {
    StyledTableRow,
    StyledTableCell,
 } from '../../helpers/standings/styledTable'
-import { headers, createRows } from '../../helpers/standings/dataToTable'
+import { headers } from '../../helpers/standings/dataToTable'
 import { ClubCell } from './ClubCell'
 
-export const StandingsTable = ({ teams }) => {
+export const StandingsTable = ({ teams, createRows }) => {
    const { league } = useContext(LeagueContext)
    const rows = createRows(teams) // Teams should be ordered by position
+
    return (
       <TableContainer
          sx={{ width: '85%', display: 'flex', justifyContent: 'center' }}

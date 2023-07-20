@@ -15,7 +15,7 @@ export const updateTeamsPosition = (teams) => {
 }
 
 const sortTeams = (teams) => {
-   let sortedTeams = [...teams]
+   let sortedTeams = teams
    let isSorted = false
 
    while (!isSorted) {

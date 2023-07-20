@@ -3,7 +3,6 @@ const getNextFixture = (club, matchweek, schedules) => {
    if (!schedules) return null
 
    const matches = schedules[matchweek]
-
    const nextMatch = matches.find((match) => {
       return match[0] === club.code || match[3] === club.code
    })
