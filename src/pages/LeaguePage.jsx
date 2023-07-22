@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
+import { League } from '../components/league'
 
 export const LeaguePage = () => {
    return (
@@ -12,7 +13,7 @@ export const LeaguePage = () => {
          }}
       >
          <Header />
-         <div> League </div>
+         <League />
          <Footer />
       </Box>
    )

@@ -1,16 +1,28 @@
-import { Box, Typography } from '@mui/material'
-import { useContext } from 'react'
+import { Box } from '@mui/material'
+import { useContext, useEffect, useState } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 import { ChampionsTable } from './ChampionsTable'
-import { MoreInfo } from './MoreInfo'
 import { Title } from './Title'
-import { CurrentChampion } from './CurrentChampion'
 import { StandingsPrev } from './StandingsPrev'
 import { TableHeaderTitle } from './TableHeaderTitle'
+import { ScheduleContext } from '../../context/schedule/ScheduleProvider'
+import { getUpdatedTeams } from '../../helpers/standings/getUpdatedTeams'
 
 export const LeagueHome = () => {
    const { league } = useContext(LeagueContext)
-   console.log(league.clubs)
+   const { schedules } = useContext(ScheduleContext)
+   const [teams, setTeams] = useState(league.clubs)
+
+   useEffect(() => {
+      if (schedules.length > 0) {
+         const updatedTeams = getUpdatedTeams(teams, schedules)
+         const sortedTeams = [...updatedTeams].sort(
+            (a, b) => a.position - b.position
+         )
+         setTeams(sortedTeams)
+      }
+   }, [league.clubs])
+
    return (
       <Box
          sx={{
@@ -28,25 +40,23 @@ export const LeagueHome = () => {
             }}
          >
             <Box
-               m={2}
+               m={8}
                sx={{
                   width: '50%',
                }}
             >
                <TableHeaderTitle title={'CURRENT TABLE'} />
-               <StandingsPrev />
-               <MoreInfo />
+               <StandingsPrev teams={teams} />
             </Box>
 
             <Box
-               m={2}
+               m={8}
                sx={{
                   width: '50%',
                }}
             >
                <TableHeaderTitle title={'HISTORIC TABLE'} />
                <ChampionsTable />
-               <CurrentChampion />
             </Box>
          </Box>
       </Box>

@@ -69,9 +69,9 @@ export const Header = () => {
                />
                <Tab
                   component={Link}
-                  to="/season/schedule"
+                  to="/season/schedule/matchweek/1"
                   label="Schedule"
-                  value="/season/schedule"
+                  value="/season/schedule/matchweek/1"
                   sx={styleTab}
                />
                <Tab

@@ -12,38 +12,12 @@ export const MatchWeek = () => {
    const { id: matchweekId } = useParams()
    const schedule = schedules[matchweekId - 1]
 
-   const addPoints = () => {
-      league.clubs[1].seasonData.points++
-      // league.clubs[0].position = 21
-   }
-
-   return !matchweekId ? (
-      <Box
-         sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-         }}
-      >
-         {/* TODO: Put some shit here */}
-         <Typography>smth will be here, but idk what tbh </Typography>
-         <Typography component="ul">IDEAS: </Typography>
-         <li> Re gen scehdules button </li>
-         <li> Some info/preview maybe </li>
-         <li> Open to ideas </li>
-         <Button onClick={addPoints}> Add Arsenal a point</Button>
-      </Box>
-   ) : (
+   return (
       <Box
          sx={{
             display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
-            // TODO: SELECT BG IMAGE FOR SCHEDULE
-            // backgroundImage:
-            //    'url(../../../src/assets/images/PremierLeague/bgWhite.png)',
-            // backgroundSize: 'cover',
          }}
          m={4}
          mt={0}

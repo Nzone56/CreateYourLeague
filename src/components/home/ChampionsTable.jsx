@@ -21,7 +21,6 @@ export const ChampionsTable = () => {
       <TableContainer
          sx={{
             width: '100%',
-            height: '50%',
          }}
       >
          <Table>

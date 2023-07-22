@@ -63,7 +63,12 @@ export const Schedule = () => {
                {league.competition.toUpperCase() + ' FIXTURES'}
             </Typography>
             <Box
-               sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+               sx={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginTop: '25px',
+               }}
             >
                <Tabs
                   value={activeTab}
@@ -76,14 +81,6 @@ export const Schedule = () => {
                   }}
                   centered
                >
-                  <Tab
-                     component={Link}
-                     to="/season/schedule"
-                     label="HOME"
-                     value="/season/schedule"
-                     sx={styleTab}
-                     key="home"
-                  />
                   {generateTabs(styleTab)}
                </Tabs>
             </Box>

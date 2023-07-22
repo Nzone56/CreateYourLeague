@@ -12,15 +12,13 @@ import { StyledTableCell } from '../../helpers/standings/styledTable'
 import { useContext } from 'react'
 import { LeagueContext } from '../../context/league/LeagueProvider'
 
-export const StandingsPrev = () => {
+export const StandingsPrev = ({ teams }) => {
    const { league } = useContext(LeagueContext)
 
-   console.log(league.clubs)
    return (
       <TableContainer
          sx={{
             width: '100%',
-            height: '50%',
          }}
       >
          <Table>
@@ -34,7 +32,7 @@ export const StandingsPrev = () => {
                </TableRow>
             </TableHead>
             <TableBody>
-               {league.clubs.map((team) => (
+               {teams.map((team) => (
                   <TableRow key={team.id}>
                      <TableCell>
                         <Typography>{team.position}</Typography>
