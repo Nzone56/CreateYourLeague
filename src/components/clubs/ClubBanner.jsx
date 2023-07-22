@@ -6,7 +6,10 @@ import WebIcon from '@mui/icons-material/Web'
 import ShareIcon from '@mui/icons-material/Share'
 import { SocialMediaIcon } from './SocialMediaIcon'
 import StadiumIcon from '@mui/icons-material/Stadium'
+import { useContext } from 'react'
+import { LeagueContext } from '../../context/league/LeagueProvider'
 export const ClubBanner = ({ club }) => {
+   const { league } = useContext(LeagueContext)
    return (
       <Box
          sx={{
@@ -44,7 +47,7 @@ export const ClubBanner = ({ club }) => {
                }}
             >
                <img
-                  src={`/assets/images/PremierLeague/${club.name}/logo.svg`}
+                  src={`/assets/images/${league.name}/${club.name}/logo.svg`}
                   alt={club.short_name}
                   width="135"
                   height="135"

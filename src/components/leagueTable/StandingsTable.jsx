@@ -90,7 +90,7 @@ export const StandingsTable = ({ teams, createRows }) => {
                                  }}
                               >
                                  <img
-                                    src={`/assets/images/PremierLeague/${row[header]}/logo.svg`}
+                                    src={`/assets/images/${league.name}/${row[header]}/logo.svg`}
                                     alt="Club Logo"
                                     width="30"
                                     height="30"

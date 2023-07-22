@@ -13,16 +13,16 @@ export const LaLigaData = {
    total_matches: 380,
    number_of_participating_clubs: 20,
    theme: {
-      primary: '#254150', //grey
-      secondary: '#92DAEC', //light-blue
-      tertiary: '#25282A', //black
+      Other1: '#254150', //grey
+      tertiary: '#92DAEC', //light-blue
+      secondary: '#25282A', //black
       Other2: '#ffffff', //white
-      Other1: '#E32D38', //red
+      primary: '#E32D38', //red
    },
    clubs: [
       {
          id: 1,
-         name: 'Almeria',
+         name: 'Almeria FC',
          short_name: 'Almeria',
          code: 'ALM',
          stadium: 'Power Horse Stadium',

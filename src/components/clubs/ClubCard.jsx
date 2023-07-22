@@ -1,8 +1,11 @@
 import { Box, Grid, ListItem, Typography } from '@mui/material'
 import EastIcon from '@mui/icons-material/East'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { LeagueContext } from '../../context/league/LeagueProvider'
 
 export const ClubCard = ({ club }) => {
+   const { league } = useContext(LeagueContext)
    return (
       <ListItem
          component={Link}
@@ -25,7 +28,7 @@ export const ClubCard = ({ club }) => {
       >
          <Box sx={{ height: '50%', width: '100%' }}>
             <img
-               src={`/assets/images/PremierLeague/${club.name}/stadiumSmall.jpg`}
+               src={`/assets/images/${league.name}/${club.name}/stadiumSmall.jpg`}
                alt={`${club.short_name} stadium `}
                width="100%"
                height="100%"
@@ -46,7 +49,7 @@ export const ClubCard = ({ club }) => {
             }}
          >
             <img
-               src={`/assets/images/PremierLeague/${club.name}/logo.svg`}
+               src={`/assets/images/${league.name}/${club.name}/logo.svg`}
                alt={club.short_name}
                width="70"
                height="70"
